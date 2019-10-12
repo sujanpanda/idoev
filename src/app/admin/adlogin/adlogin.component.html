@@ -1,0 +1,24 @@
+<mat-card class="desk_admin_card">
+	<form class="adlogin_page" [formGroup]="adminForm">
+		<mat-form-field>
+	    	<input type="text" autocomplete="off" matInput placeholder="Username" name="userid" formControlName="userid">
+	    	<mat-error *ngIf="lform.userid.errors?.required && lform.userid.touched">
+				User ID is Required.
+			</mat-error>
+	  	</mat-form-field>
+	  	<div class="pass_wrap">
+			<mat-form-field>
+		    	<input [type]="hide ? 'text' : 'password'" matInput placeholder="Password" name="password" formControlName="password">
+		    	<mat-error *ngIf="lform.password.errors?.required && lform.password.touched">
+					Password is Required.
+				</mat-error>
+		  	</mat-form-field>
+		  	<span class="pass_icon">
+		  		<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+		  	</span>
+	  	</div>
+	  	<div class="btn_wrap">
+			<button id="loginbtn" mat-raised-button color="warn" (click)="loginUser()">Login</button>
+		</div>
+	</form>
+</mat-card>

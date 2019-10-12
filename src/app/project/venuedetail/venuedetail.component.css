@@ -1,0 +1,312 @@
+.page_wrap {
+    padding: 0 16px;
+    margin: -16px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.venu_heading {
+	font-family: 'Source Serif Pro', serif;
+	font-size: 34px;
+	font-weight: 400;
+    line-height: 40px;
+    margin-bottom: 16px;
+}
+.venue_user_img {
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+    float: left;
+    margin: 0 6px 0 0;
+    overflow: hidden;
+}
+.venue_user_img img {
+	display: block;
+	max-width: 40px;
+}
+.sub_card_head {
+    font-size: 14px;
+    font-weight: 600;
+	margin: 0;
+	padding: 10px 0 0;
+}
+.mat-card-content .sub_card_head {
+	padding: 0;
+}
+.user_detail {
+    margin: 0 0 16px 0;
+}
+.venue_quote {
+	font-size: 14px;
+	margin-bottom: 22px;
+}
+.venue_image {
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin-bottom: 32px;
+	overflow: hidden;
+}
+.venue_image img {
+	display: block;
+	width: 100%;
+}
+.like_anch, .share_anch, .location_anch {
+	color: #212121;
+	display: inline-block;
+	font-size: 12px;
+    font-weight: 500;
+    height: 22px;
+    line-height: 22px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.like_anch {
+	cursor: pointer;
+}
+.like_anch img, .share_anch img, .location_anch img {
+	display: inline-block;
+	vertical-align: middle;
+    margin: -2px 8px 0 0;
+}
+.like_anch, .share_anch {
+	float: right;
+	margin: 0 0 0 20px;
+}
+.location_anch img {
+	margin: -3px 8px 0 0;
+}
+.price_wrap {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 500;
+	vertical-align: middle;
+	width: 58%;
+}
+.social_feature {
+	margin: 0 0 30px;
+}
+.book_this_wrap .mat-raised-button {
+	background-color: #f05758;
+	font-weight: 600;
+	font-size: 12px;
+	height: 48px;
+    line-height: 48px;
+	text-transform: uppercase;
+	width: 42%;
+}
+.venuedetail_card {
+	margin-bottom: 30px;
+}
+.page_heading_1 {
+	color: #212121;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	margin-bottom: 16px;
+	text-transform: uppercase;
+}
+.venue_card_wrap {
+	display: block;
+	float: left;
+	margin: 0 0 16px;
+	padding: 0;
+	text-decoration: none;
+	width: calc(50% - 8px);
+}
+.venue_card_wrap:nth-child(2n) {
+	margin-left: 16px;
+}
+.sub_card_head {
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+.sub_card_head2 {
+    font-size: 12px;
+    line-height: 16px;
+}
+.venues_listing {
+	margin-bottom: 20px;
+}
+.imgAni img {
+	-webkit-animation: heartBeat 0.2s forwards; /* for less modern browsers */
+    animation: heartBeat 0.2s forwards;
+}
+@-webkit-keyframes heartBeat {
+    0%   { transform: scale(1.0); }
+    50%  { transform: scale(1.3); }
+    100% { transform: scale(1.0); }
+}
+@keyframes heartBeat {
+    0%   { transform: scale(1.0); }
+    50%  { transform: scale(1.3); }
+    100% { transform: scale(1.0); }
+}
+.price_sign {
+	color: #2699fb;
+}
+
+.load_card_list {
+    float: left;
+    margin-bottom: 16px;
+    width: 100%;
+}
+.page_load_wrap {
+    margin-top: -16px;
+    padding: 0 16px;
+    position: relative;
+    z-index: 2;
+}
+.page_load_wrap.no_paddLR {
+    padding: 0;
+}
+.no_margin.page_load_wrap {
+    margin-top: 0;
+}
+.load_bg {
+    -webkit-animation: loading 0.8s infinite;
+    -moz-animation: loading 0.8s infinite;
+    animation: loading 0.8s infinite;
+    background-color: #e0e0e0;
+}
+.load_top_card {
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 0 0 60.5%;
+    font-size: 0;
+    height: 0;
+}
+.load_card_btn {
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 0;
+    height: 48px;
+    margin: 0 16px 0;
+}
+.load_text {
+    height: 10px;
+}
+.load_text_half {
+    height: 10px;
+    width: 70%;
+}
+.load_card_half {
+    display: inline-block;
+    width: 48%;
+}
+.load_card_img {
+    -o-border-radius: 4px 4px 0 0;
+    -ms-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    padding: 0 0 50%;
+}
+.load_card_half + .load_card_half {
+    margin-left: 4%;
+}
+.load_card_normal {
+    background-color: #fff;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -o-box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    -ms-box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    -moz-box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    -webkit-box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    padding: 16px;
+    font-size: 0;
+}
+.load_card_input {
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    height: 36px;
+}
+.hgt_16  {
+    height: 16px;
+}
+.hgt_30  {
+    height: 30px;
+}
+.hgt_10  {
+    height: 10px;
+}
+.hgt_60  {
+    height: 60px;
+}
+.desk_page_det {
+    margin: 30px auto 0;
+    max-width: 1000px;
+}
+.desk_page_det .venue_card_wrap {
+    margin: 0 0 16px 16px;
+    width: calc(25% - 12px);
+}
+.desk_page_det .venue_card_wrap:nth-child(4n+1) {
+    margin-left: 0;
+}
+.desk_page_det .load_card_half {
+    margin: 0 0 0 1.7%;
+    width: 23.7%;
+}
+.desk_page_det .load_card_half:first-child {
+    margin: 0;
+}
+.desk_page_det .load_card_list {
+    float: none;
+    margin-bottom: 30px;
+}
+@-webkit-keyframes loading {
+  0% {
+    background-color: #eee;
+  }
+  40% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #eee;
+  }
+}
+
+@-moz-keyframes loading {
+  0% {
+    background-color: #eee;
+  }
+  40% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #eee;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-color: #eee;
+  }
+  40% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #eee;
+  }
+}
+.more_list_result {
+    float: left;
+    width: 100%;
+}

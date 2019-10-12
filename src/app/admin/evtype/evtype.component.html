@@ -1,0 +1,22 @@
+<div class="main_dashboard">
+	<h2>Add Event Type.</h2>
+	<form class="admin_form" [formGroup]="adminform">
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="Event Type" name="type" formControlName="type">
+		    	<mat-error *ngIf="aform.type.errors?.required && aform.type.touched">
+					Please write Event Type.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+	  	<div class="ibform">
+	  		<button id="adminbtn" mat-raised-button color="warn" (click)="adEventType()">ADD</button>
+	  	</div>
+	  	<div class="error" *ngIf="errorMsg">{{errorMsg}}</div>
+	  	<div class="success" *ngIf="successMsg">{{successMsg}}</div>
+	</form>
+	<p>Added Events</p>
+	<ul class="city_list">
+		<li *ngFor="let el of evtList">{{el.type}}</li>
+	</ul>
+</div>

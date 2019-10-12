@@ -1,0 +1,128 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<mat-card class="contact_card">
+		<form class="contact_form" [formGroup]="idoEvForm">
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="Name" #name name="name" formControlName="name">
+		    	<mat-error *ngIf="ideform.name.errors?.required && ideform.name.touched">
+					Please write your name.
+				</mat-error>
+				<mat-error *ngIf="ideform.name.errors?.minlength && ideform.name.touched; else notValid">
+					Name should be minimum 3 letters.
+				</mat-error>
+				<ng-template #notValid>
+					<mat-error *ngIf="ideform.name.errors?.pattern && ideform.name.touched">
+						Remove space before and after your name.
+					</mat-error>
+				</ng-template>
+		  	</mat-form-field>
+			<mat-form-field>
+		    	<input type="email" autocomplete="off" (keydown.space)="$event.preventDefault();" matInput placeholder="Email" #email name="email" formControlName="email">
+		    	<mat-error *ngIf="ideform.email.errors?.required && ideform.email.touched">
+					Email ID is Required.
+				</mat-error>
+				<mat-error *ngIf="ideform.email.errors?.email && ideform.email.touched">
+					Please type a valid email ID.
+				</mat-error>
+		  	</mat-form-field>
+			<mat-form-field>
+		    	<input type="tel" autocomplete="off" matInput placeholder="Mobile" (keydown.space)="$event.preventDefault();" name="mobile" #mobile formControlName="mobile">
+		    	<mat-error *ngIf="ideform.mobile.errors?.required && ideform.mobile.touched ||
+				ideform.mobile.errors?.minlength && ideform.mobile.touched ||
+				ideform.mobile.errors?.maxlength && ideform.mobile.touched; else phNotVld">
+					Please enter your 10 digit Mobile Number.
+				</mat-error>
+				<ng-template #phNotVld>
+					<mat-error *ngIf="ideform.mobile.errors?.pattern && ideform.mobile.touched">
+						Remove enter a valid Mobile Number.
+					</mat-error>
+				</ng-template>
+		  	</mat-form-field>
+			<mat-form-field>
+		    	<textarea placeholder="Your Message" matInput name="message" #message formControlName="message" row="3"></textarea>
+		    	<mat-error *ngIf="ideform.message.errors?.required && ideform.message.touched">
+					Please write your message.
+				</mat-error>
+		    	<mat-error *ngIf="ideform.message.errors?.pattern && ideform.message.touched">
+					Remove space before and after your message.
+				</mat-error>
+		  	</mat-form-field>
+		  	<div class="btn_wrap">
+				<button id="formBtn" mat-raised-button color="warn" (click)="contactFunc()">Send</button>
+			</div>
+		</form>
+	</mat-card>
+	<span class="or_design">or</span>
+	<p class="main_quote">Call or Email us</p>
+	<p class="cont_quote">Tel: 09991234567<br>Email: <a href="mailto:test@test.com">test@test.com</a></p>
+	<p class="main_quote">Address</p>
+	<p class="cont_quote">A-0, Blah Road, Greater Kailash - A, New Delhi - 111111</p>
+	<div style="height:14px;font-size:0;">&nbsp;</div>
+</div>
+<ng-template #desktop>
+	<div class="desk_cont_wrap">
+		<mat-card class="contact_card">
+			<form class="contact_form" [formGroup]="idoEvForm">
+				<mat-form-field>
+			    	<input type="text" autocomplete="off" matInput placeholder="Name" #name name="name" formControlName="name">
+			    	<mat-error *ngIf="ideform.name.errors?.required && ideform.name.touched">
+						Please write your name.
+					</mat-error>
+					<mat-error *ngIf="ideform.name.errors?.minlength && ideform.name.touched; else notValid">
+						Name should be minimum 3 letters.
+					</mat-error>
+					<ng-template #notValid>
+						<mat-error *ngIf="ideform.name.errors?.pattern && ideform.name.touched">
+							Remove space before and after your name.
+						</mat-error>
+					</ng-template>
+			  	</mat-form-field>
+				<mat-form-field>
+			    	<input type="email" autocomplete="off" (keydown.space)="$event.preventDefault();" matInput placeholder="Email" #email name="email" formControlName="email">
+			    	<mat-error *ngIf="ideform.email.errors?.required && ideform.email.touched">
+						Email ID is Required.
+					</mat-error>
+					<mat-error *ngIf="ideform.email.errors?.email && ideform.email.touched">
+						Please type a valid email ID.
+					</mat-error>
+			  	</mat-form-field>
+				<mat-form-field>
+			    	<input type="tel" autocomplete="off" matInput placeholder="Mobile" (keydown.space)="$event.preventDefault();" name="mobile" #mobile formControlName="mobile">
+			    	<mat-error *ngIf="ideform.mobile.errors?.required && ideform.mobile.touched ||
+					ideform.mobile.errors?.minlength && ideform.mobile.touched ||
+					ideform.mobile.errors?.maxlength && ideform.mobile.touched; else phNotVld">
+						Please enter your 10 digit Mobile Number.
+					</mat-error>
+					<ng-template #phNotVld>
+						<mat-error *ngIf="ideform.mobile.errors?.pattern && ideform.mobile.touched">
+							Remove enter a valid Mobile Number.
+						</mat-error>
+					</ng-template>
+			  	</mat-form-field>
+				<mat-form-field>
+			    	<textarea placeholder="Your Message" matInput name="message" #message formControlName="message" row="3"></textarea>
+			    	<mat-error *ngIf="ideform.message.errors?.required && ideform.message.touched">
+						Please write your message.
+					</mat-error>
+			    	<mat-error *ngIf="ideform.message.errors?.pattern && ideform.message.touched">
+						Remove space before and after your message.
+					</mat-error>
+			  	</mat-form-field>
+			  	<div class="btn_wrap">
+					<button id="formBtn" mat-raised-button color="warn" (click)="contactFunc()">Send</button>
+				</div>
+			</form>
+		</mat-card>
+		<span class="or_design">or</span>
+		<div class="custom_clearfix">
+			<div class="two_half">
+				<p class="main_quote">Address</p>
+				<p class="cont_quote">A-0, Blah Road, Greater Kailash - A, New Delhi - 111111</p>
+			</div>
+			<div class="two_half">
+				<p class="main_quote">Call or Email us</p>
+				<p class="cont_quote">Tel: 09991234567, Email: <a href="mailto:test@test.com">test@test.com</a></p>
+			</div>
+			<div style="height:14px;font-size:0;">&nbsp;</div>
+		</div>
+	</div>
+</ng-template>

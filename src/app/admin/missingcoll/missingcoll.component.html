@@ -1,0 +1,13 @@
+<div class="main_dashboard">
+	<h2>Users Feedbacks.</h2>
+	<div class="cont_list" *ngFor="let gtfrm of getMissDet">
+		<span class="cont_name">{{gtfrm.email}}</span>
+		<span class="cont_email">{{gtfrm.city}}</span>
+		<span class="cont_email">{{gtfrm.venue}}</span>
+		<div class="cont_descr">
+			<span class="cont_item"><span class="fade_color">item name:-</span> {{gtfrm.item}}</span>
+			<span class="cont_email"><span class="fade_color">date of missing:-</span> {{gtfrm.date}}</span>
+		</div>
+		<div class="cont_descr">{{gtfrm.message}}</div>
+	</div>
+</div>

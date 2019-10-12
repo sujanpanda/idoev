@@ -1,0 +1,635 @@
+<div class="main_dashboard">
+	<h2>Please mention prices of equipment if users wants to arrange.</h2>
+	<form class="admin_form" [formGroup]="adminform" *ngIf="getBkCalc; else noBookCalc">
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price of DJ" #djprice name="djprice" formControlName="djprice" value="{{getBkCalc.djprice}}">
+		    	<mat-error *ngIf="aform.djprice.errors?.required && aform.djprice.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.djprice.errors?.pattern && aform.djprice.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price of Mike" #mikeprice name="mikeprice" formControlName="mikeprice" value="{{getBkCalc.mikeprice}}">
+		    	<mat-error *ngIf="aform.mikeprice.errors?.required && aform.mikeprice.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.mikeprice.errors?.pattern && aform.mikeprice.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price of Projector" #projectorprice name="projectorprice" formControlName="projectorprice" value="{{getBkCalc.projectorprice}}">
+		    	<mat-error *ngIf="aform.projectorprice.errors?.required && aform.projectorprice.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.projectorprice.errors?.pattern && aform.projectorprice.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Breakfast" #breaknorm name="breaknorm" formControlName="breaknorm" value="{{getBkCalc.breaknorm}}">
+		    	<mat-error *ngIf="aform.breaknorm.errors?.required && aform.breaknorm.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.breaknorm.errors?.pattern && aform.breaknorm.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Lunch" #lunchnorm name="lunchnorm" formControlName="lunchnorm" value="{{getBkCalc.lunchnorm}}">
+		    	<mat-error *ngIf="aform.lunchnorm.errors?.required && aform.lunchnorm.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.lunchnorm.errors?.pattern && aform.lunchnorm.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Dinner" #dinnorm name="dinnorm" formControlName="dinnorm" value="{{getBkCalc.dinnorm}}">
+		    	<mat-error *ngIf="aform.dinnorm.errors?.required && aform.dinnorm.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.dinnorm.errors?.pattern && aform.dinnorm.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Snacks" #snacknorm name="snacknorm" formControlName="snacknorm" value="{{getBkCalc.snacknorm}}">
+		    	<mat-error *ngIf="aform.snacknorm.errors?.required && aform.snacknorm.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.snacknorm.errors?.pattern && aform.snacknorm.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Tea & Beverage" #tnbevrnorm name="tnbevrnorm" formControlName="tnbevrnorm" value="{{getBkCalc.tnbevrnorm}}">
+		    	<mat-error *ngIf="aform.tnbevrnorm.errors?.required && aform.tnbevrnorm.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.tnbevrnorm.errors?.pattern && aform.tnbevrnorm.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Breakfast" #breaksemi name="breaksemi" formControlName="breaksemi" value="{{getBkCalc.breaksemi}}">
+		    	<mat-error *ngIf="aform.breaksemi.errors?.required && aform.breaksemi.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.breaksemi.errors?.pattern && aform.breaksemi.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Lunch" #lunchsemi name="lunchsemi" formControlName="lunchsemi" value="{{getBkCalc.lunchsemi}}">
+		    	<mat-error *ngIf="aform.lunchsemi.errors?.required && aform.lunchsemi.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.lunchsemi.errors?.pattern && aform.lunchsemi.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Dinner" #dinsemi name="dinsemi" formControlName="dinsemi" value="{{getBkCalc.dinsemi}}">
+		    	<mat-error *ngIf="aform.dinsemi.errors?.required && aform.dinsemi.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.dinsemi.errors?.pattern && aform.dinsemi.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Snacks" #snacksemi name="snacksemi" formControlName="snacksemi" value="{{getBkCalc.snacksemi}}">
+		    	<mat-error *ngIf="aform.snacksemi.errors?.required && aform.snacksemi.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.snacksemi.errors?.pattern && aform.snacksemi.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Tea & Beverage" #tnbevrsemi name="tnbevrsemi" formControlName="tnbevrsemi" value="{{getBkCalc.tnbevrsemi}}">
+		    	<mat-error *ngIf="aform.tnbevrsemi.errors?.required && aform.tnbevrsemi.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.tnbevrsemi.errors?.pattern && aform.tnbevrsemi.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Breakfast" #breakdlx name="breakdlx" formControlName="breakdlx" value="{{getBkCalc.breakdlx}}">
+		    	<mat-error *ngIf="aform.breakdlx.errors?.required && aform.breakdlx.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.breakdlx.errors?.pattern && aform.breakdlx.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Lunch" #lunchdlx name="lunchdlx" formControlName="lunchdlx" value="{{getBkCalc.lunchdlx}}">
+		    	<mat-error *ngIf="aform.lunchdlx.errors?.required && aform.lunchdlx.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.lunchdlx.errors?.pattern && aform.lunchdlx.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Dinner" #dindlx name="dindlx" formControlName="dindlx" value="{{getBkCalc.dindlx}}">
+		    	<mat-error *ngIf="aform.dindlx.errors?.required && aform.dindlx.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.dindlx.errors?.pattern && aform.dindlx.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Snacks" #snackdlx name="snackdlx" formControlName="snackdlx" value="{{getBkCalc.snackdlx}}">
+		    	<mat-error *ngIf="aform.snackdlx.errors?.required && aform.snackdlx.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.snackdlx.errors?.pattern && aform.snackdlx.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Tea & Beverage" #tnbevrdlx name="tnbevrdlx" formControlName="tnbevrdlx" value="{{getBkCalc.tnbevrdlx}}">
+		    	<mat-error *ngIf="aform.tnbevrdlx.errors?.required && aform.tnbevrdlx.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.tnbevrdlx.errors?.pattern && aform.tnbevrdlx.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Lighting" #lightnorm name="lightnorm" formControlName="lightnorm" value="{{getBkCalc.lightnorm}}">
+		    	<mat-error *ngIf="aform.lightnorm.errors?.required && aform.lightnorm.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.lightnorm.errors?.pattern && aform.lightnorm.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-delux Lighting" #lightsemi name="lightsemi" formControlName="lightsemi" value="{{getBkCalc.lightsemi}}">
+		    	<mat-error *ngIf="aform.lightsemi.errors?.required && aform.lightsemi.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.lightsemi.errors?.pattern && aform.lightsemi.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Lighting" #lightdlx name="lightdlx" formControlName="lightdlx" value="{{getBkCalc.lightdlx}}">
+		    	<mat-error *ngIf="aform.lightdlx.errors?.required && aform.lightdlx.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.lightdlx.errors?.pattern && aform.lightdlx.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Flower" #flowernorm name="flowernorm" formControlName="flowernorm" value="{{getBkCalc.flowernorm}}">
+		    	<mat-error *ngIf="aform.flowernorm.errors?.required && aform.flowernorm.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.flowernorm.errors?.pattern && aform.flowernorm.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-delux Flower" #flowersemi name="flowersemi" formControlName="flowersemi" value="{{getBkCalc.flowersemi}}">
+		    	<mat-error *ngIf="aform.flowersemi.errors?.required && aform.flowersemi.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.flowersemi.errors?.pattern && aform.flowersemi.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Flower" #flowerdlx name="flowerdlx" formControlName="flowerdlx" value="{{getBkCalc.flowerdlx}}">
+		    	<mat-error *ngIf="aform.flowerdlx.errors?.required && aform.flowerdlx.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.flowerdlx.errors?.pattern && aform.flowerdlx.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Seating" #seatnorm name="seatnorm" formControlName="seatnorm" value="{{getBkCalc.seatnorm}}">
+		    	<mat-error *ngIf="aform.seatnorm.errors?.required && aform.seatnorm.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.seatnorm.errors?.pattern && aform.seatnorm.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-delux Seating" #seatsemi name="seatsemi" formControlName="seatsemi" value="{{getBkCalc.seatsemi}}">
+		    	<mat-error *ngIf="aform.seatsemi.errors?.required && aform.seatsemi.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.seatsemi.errors?.pattern && aform.seatsemi.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Seating" #seatdlx name="seatdlx" formControlName="seatdlx" value="{{getBkCalc.seatdlx}}">
+		    	<mat-error *ngIf="aform.seatdlx.errors?.required && aform.seatdlx.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.seatdlx.errors?.pattern && aform.seatdlx.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Price for Addition of Non-veg" #addNonveg name="addNonveg" formControlName="addNonveg" value="{{getBkCalc.addNonveg}}">
+		    	<mat-error *ngIf="aform.addNonveg.errors?.required && aform.addNonveg.touched">
+					Please enter price.
+				</mat-error>
+				<mat-error *ngIf="aform.addNonveg.errors?.pattern && aform.addNonveg.touched">
+					Please enter a valid price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+	  	<div class="ibform">
+	  		<button id="adminbtn" mat-raised-button color="warn" (click)="updBookCalc()">ADD</button>
+	  	</div>
+	  	<div class="error" *ngIf="errorMsg">{{errorMsg}}</div>
+	  	<div class="success" *ngIf="successMsg">{{successMsg}}</div>
+	</form>
+	<ng-template #noBookCalc>
+		<form class="admin_form" [formGroup]="adminform">
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price of DJ" #djprice name="djprice" formControlName="djprice">
+			    	<mat-error *ngIf="aform.djprice.errors?.required && aform.djprice.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.djprice.errors?.pattern && aform.djprice.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price of Mike" #mikeprice name="mikeprice" formControlName="mikeprice">
+			    	<mat-error *ngIf="aform.mikeprice.errors?.required && aform.mikeprice.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.mikeprice.errors?.pattern && aform.mikeprice.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price of Projector" #projectorprice name="projectorprice" formControlName="projectorprice">
+			    	<mat-error *ngIf="aform.projectorprice.errors?.required && aform.projectorprice.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.projectorprice.errors?.pattern && aform.projectorprice.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Breakfast" #breaknorm name="breaknorm" formControlName="breaknorm">
+			    	<mat-error *ngIf="aform.breaknorm.errors?.required && aform.breaknorm.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.breaknorm.errors?.pattern && aform.breaknorm.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Lunch" #lunchnorm name="lunchnorm" formControlName="lunchnorm">
+			    	<mat-error *ngIf="aform.lunchnorm.errors?.required && aform.lunchnorm.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.lunchnorm.errors?.pattern && aform.lunchnorm.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Dinner" #dinnorm name="dinnorm" formControlName="dinnorm">
+			    	<mat-error *ngIf="aform.dinnorm.errors?.required && aform.dinnorm.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.dinnorm.errors?.pattern && aform.dinnorm.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Snacks" #snacknorm name="snacknorm" formControlName="snacknorm">
+			    	<mat-error *ngIf="aform.snacknorm.errors?.required && aform.snacknorm.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.snacknorm.errors?.pattern && aform.snacknorm.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Tea & Beverage" #tnbevrnorm name="tnbevrnorm" formControlName="tnbevrnorm">
+			    	<mat-error *ngIf="aform.tnbevrnorm.errors?.required && aform.tnbevrnorm.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.tnbevrnorm.errors?.pattern && aform.tnbevrnorm.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Breakfast" #breaksemi name="breaksemi" formControlName="breaksemi">
+			    	<mat-error *ngIf="aform.breaksemi.errors?.required && aform.breaksemi.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.breaksemi.errors?.pattern && aform.breaksemi.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Lunch" #lunchsemi name="lunchsemi" formControlName="lunchsemi">
+			    	<mat-error *ngIf="aform.lunchsemi.errors?.required && aform.lunchsemi.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.lunchsemi.errors?.pattern && aform.lunchsemi.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Dinner" #dinsemi name="dinsemi" formControlName="dinsemi">
+			    	<mat-error *ngIf="aform.dinsemi.errors?.required && aform.dinsemi.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.dinsemi.errors?.pattern && aform.dinsemi.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Snacks" #snacksemi name="snacksemi" formControlName="snacksemi">
+			    	<mat-error *ngIf="aform.snacksemi.errors?.required && aform.snacksemi.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.snacksemi.errors?.pattern && aform.snacksemi.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-Delux Tea & Beverage" #tnbevrsemi name="tnbevrsemi" formControlName="tnbevrsemi">
+			    	<mat-error *ngIf="aform.tnbevrsemi.errors?.required && aform.tnbevrsemi.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.tnbevrsemi.errors?.pattern && aform.tnbevrsemi.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Breakfast" #breakdlx name="breakdlx" formControlName="breakdlx">
+			    	<mat-error *ngIf="aform.breakdlx.errors?.required && aform.breakdlx.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.breakdlx.errors?.pattern && aform.breakdlx.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Lunch" #lunchdlx name="lunchdlx" formControlName="lunchdlx">
+			    	<mat-error *ngIf="aform.lunchdlx.errors?.required && aform.lunchdlx.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.lunchdlx.errors?.pattern && aform.lunchdlx.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Dinner" #dindlx name="dindlx" formControlName="dindlx">
+			    	<mat-error *ngIf="aform.dindlx.errors?.required && aform.dindlx.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.dindlx.errors?.pattern && aform.dindlx.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Snacks" #snackdlx name="snackdlx" formControlName="snackdlx">
+			    	<mat-error *ngIf="aform.snackdlx.errors?.required && aform.snackdlx.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.snackdlx.errors?.pattern && aform.snackdlx.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Tea & Beverage" #tnbevrdlx name="tnbevrdlx" formControlName="tnbevrdlx">
+			    	<mat-error *ngIf="aform.tnbevrdlx.errors?.required && aform.tnbevrdlx.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.tnbevrdlx.errors?.pattern && aform.tnbevrdlx.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Lighting" #lightnorm name="lightnorm" formControlName="lightnorm">
+			    	<mat-error *ngIf="aform.lightnorm.errors?.required && aform.lightnorm.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.lightnorm.errors?.pattern && aform.lightnorm.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-delux Lighting" #lightsemi name="lightsemi" formControlName="lightsemi">
+			    	<mat-error *ngIf="aform.lightsemi.errors?.required && aform.lightsemi.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.lightsemi.errors?.pattern && aform.lightsemi.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Lighting" #lightdlx name="lightdlx" formControlName="lightdlx">
+			    	<mat-error *ngIf="aform.lightdlx.errors?.required && aform.lightdlx.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.lightdlx.errors?.pattern && aform.lightdlx.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Flower" #flowernorm name="flowernorm" formControlName="flowernorm">
+			    	<mat-error *ngIf="aform.flowernorm.errors?.required && aform.flowernorm.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.flowernorm.errors?.pattern && aform.flowernorm.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-delux Flower" #flowersemi name="flowersemi" formControlName="flowersemi">
+			    	<mat-error *ngIf="aform.flowersemi.errors?.required && aform.flowersemi.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.flowersemi.errors?.pattern && aform.flowersemi.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Flower" #flowerdlx name="flowerdlx" formControlName="flowerdlx">
+			    	<mat-error *ngIf="aform.flowerdlx.errors?.required && aform.flowerdlx.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.flowerdlx.errors?.pattern && aform.flowerdlx.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Normal Seating" #seatnorm name="seatnorm" formControlName="seatnorm">
+			    	<mat-error *ngIf="aform.seatnorm.errors?.required && aform.seatnorm.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.seatnorm.errors?.pattern && aform.seatnorm.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Semi-delux Seating" #seatsemi name="seatsemi" formControlName="seatsemi">
+			    	<mat-error *ngIf="aform.seatsemi.errors?.required && aform.seatsemi.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.seatsemi.errors?.pattern && aform.seatsemi.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Delux Seating" #seatdlx name="seatdlx" formControlName="seatdlx">
+			    	<mat-error *ngIf="aform.seatdlx.errors?.required && aform.seatdlx.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.seatdlx.errors?.pattern && aform.seatdlx.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+			<div class="ibform">
+				<mat-form-field>
+			    	<input type="number" autocomplete="off" matInput placeholder="Price for Addition of Non-veg" #addNonveg name="addNonveg" formControlName="addNonveg">
+			    	<mat-error *ngIf="aform.addNonveg.errors?.required && aform.addNonveg.touched">
+						Please enter price.
+					</mat-error>
+					<mat-error *ngIf="aform.addNonveg.errors?.pattern && aform.addNonveg.touched">
+						Please enter a valid price.
+					</mat-error>
+			  	</mat-form-field>
+		  	</div>
+		  	<div class="ibform">
+		  		<button id="adminbtn" mat-raised-button color="warn" (click)="adBookCalc()">ADD</button>
+		  	</div>
+		  	<div class="error" *ngIf="errorMsg">{{errorMsg}}</div>
+		  	<div class="success" *ngIf="successMsg">{{successMsg}}</div>
+		</form>
+	</ng-template>
+</div>

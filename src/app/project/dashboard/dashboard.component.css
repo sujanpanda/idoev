@@ -1,0 +1,151 @@
+@import 'swiper/dist/css/swiper.min.css';
+.page_wrap {
+	margin: -16px 0 0;
+	padding: 0 16px;
+    position: relative;
+    z-index: 2;
+}
+.user_card {
+	margin-bottom: 8px;
+	overflow: hidden;
+	padding: 0;
+}
+.img_resp {
+	display: block;
+	width: 100%;
+}
+.user_img {
+	position: relative;
+}
+.add_photo_link {
+    background-color: #f05758;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 2;
+}
+.col_3 {
+	margin-bottom: 8px;
+}
+.col_3 .col_list {
+	margin: 0 0 0 8px;
+	width: 33.3%;
+	width: calc(33.3% - 5.3px);
+}
+.col_3 .col_list:first-child {
+	margin: 0;
+}
+.col_list {
+	display: table;
+	float: left;
+	min-height: 85px;
+	text-decoration: none;
+}
+.col_list .mat-card {
+	background-color: #F1F9FF;
+	display: table-cell;
+	padding: 11px;
+    vertical-align: middle;
+}
+.top_card_head {
+	font-size: 12px;
+	font-weight: 600;
+}
+.top_card_head span {
+	font-size: 18px;
+}
+.card_det {
+	color: #666;
+	font-size: 12px;
+	font-weight: 400;
+}
+.bold {
+	font-weight: 600;
+}
+.btn_wrap {
+	padding: 16px 0 0;
+}
+.btn_wrap .mat-raised-button {
+	background-color: #f05758;
+	font-weight: 600;
+	font-size: 12px;
+	height: 48px;
+    line-height: 48px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.welcome_card {
+	margin-bottom: 30px;
+}
+.page_heading_1 {
+	color: #212121;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	margin-bottom: 16px;
+	text-transform: uppercase;
+}
+.slider_page_wrap {
+	margin: 0 -8px 18px;
+}
+.slide_card_wrap {
+	display: block;
+	padding: 0 8px;
+	text-decoration: none;
+}
+.slider_page_wrap .swiper-pagination {
+	bottom: 0;
+    height: 26px;
+    position: static;
+}
+.sub_card_head {
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+.sub_card_head2 {
+    font-size: 12px;
+    line-height: 16px;
+}
+.venue_user_img {
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	bottom: 14px;
+	height: 26px;
+	overflow: hidden;
+	position: absolute;
+	right: 10px;
+	width: 26px;
+}
+.venue_user_img img {
+	display: block;
+	width: 100%;
+}
+.desktop_dash {
+	max-width: 1000px;
+	margin: 30px auto;
+}
+.col_half40 {
+	float: left;
+	max-width: 392px;
+}
+.col_half60 {
+	float: left;
+	margin-left: 16px;
+	max-width: 592px;
+}
+.desktop_dash .col_list {
+    min-height: 93px;
+}
+.desktop_dash .col_list .mat-card {
+    padding: 11px 16px;
+}
+.desktop_dash .btn_wrap .mat-raised-button {
+    font-size: 14px;
+    font-weight: 400;
+}
+.desktop_dash .col_3 .col_list {
+    width: calc(33.33% - 5.3px);
+}

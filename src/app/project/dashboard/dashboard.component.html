@@ -1,0 +1,558 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<mat-card class="user_card">
+	    <div class="user_img" *ngIf="userDetail.imgpath;else noimageAvail">
+	    	<a mat-fab class="add_photo_link" color="warn" routerLink="/addphoto">
+	    		<mat-icon>edit</mat-icon>
+	    	</a>
+        	<img class="img_resp"
+			[defaultImage]="defaultImage"
+        	[lazyLoad]="image"
+			alt="Image 1">
+	    </div>
+	    <ng-template #noimageAvail>
+		    <div class="user_img">
+		    	<a mat-fab class="add_photo_link" color="warn" routerLink="/addphoto">
+		    		<mat-icon>add</mat-icon>
+		    	</a>
+	        	<img class="img_resp"
+	        	[defaultImage]="defNoimage"
+        		[lazyLoad]="noimage"
+	        	alt="Image 1">
+		    </div>
+		</ng-template>
+	</mat-card>
+	<div class="col_3 custom_clearfix">
+		<a class="col_list" routerLink="/venues">
+			<mat-card>
+				<div class="top_card_head">SEARCH</div>
+				<div class="card_det">VENUES</div>
+			</mat-card>
+		</a>
+		<a class="col_list" routerLink="/bookhistory">
+			<mat-card>
+				<div class="top_card_head"><span>{{aprCount}}</span> EVENTS</div>
+				<div class="card_det">APPROVED</div>
+			</mat-card>
+		</a>
+		<a class="col_list" routerLink="/bookhistory">
+			<mat-card>
+				<div class="top_card_head"><span>{{pndCount}}</span> EVENTS</div>
+				<div class="card_det">PENDING</div>
+			</mat-card>
+		</a>
+	</div>
+	<mat-card class="welcome_card">
+	    Welcome! <span class="bold" *ngIf="userDetail">{{userDetail.name | titlecase}}</span>, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+	    <div class="btn_wrap">
+			<a routerLink="/mydetail" mat-raised-button color="warn">Update Your Account</a>
+		</div>
+	</mat-card>
+	<h3 class="page_heading_1">TOP VENUES</h3>
+	<div class="slider_page_wrap">
+		<div class="swiper-container work_slide">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+								<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+								<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+								<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+								<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		    </div>
+		    <!-- If we need pagination -->
+		    <div class="swiper-pagination"></div>
+		</div>
+	</div>
+	<h3 class="page_heading_1">FOODS</h3>
+	<div class="slider_page_wrap">
+		<div class="swiper-container work_slide">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<p class="sub_card_head">ABCD FOOD</p>
+						    	<p class="sub_card_head2">New Delhi</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<p class="sub_card_head">ABCD FOOD</p>
+						    	<p class="sub_card_head2">New Delhi</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<p class="sub_card_head">ABCD FOOD</p>
+						    	<p class="sub_card_head2">New Delhi</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<p class="sub_card_head">ABCD FOOD</p>
+						    	<p class="sub_card_head2">New Delhi</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		    </div>
+		    <!-- If we need pagination -->
+		    <div class="swiper-pagination"></div>
+		</div>
+	</div>
+	<h3 class="page_heading_1">EQUIPMENTS</h3>
+	<div class="slider_page_wrap">
+		<div class="swiper-container work_slide">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<p class="sub_card_head">ABCD FOOD</p>
+						    	<p class="sub_card_head2">New Delhi</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<p class="sub_card_head">ABCD FOOD</p>
+						    	<p class="sub_card_head2">New Delhi</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<p class="sub_card_head">ABCD FOOD</p>
+						    	<p class="sub_card_head2">New Delhi</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		        <div class="swiper-slide">
+		        	<a class="slide_card_wrap" routerLink="/">
+		        		<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<p class="sub_card_head">ABCD FOOD</p>
+						    	<p class="sub_card_head2">New Delhi</p>
+						  	</mat-card-content>
+						</mat-card>
+		        	</a>
+		        </div>
+		    </div>
+		    <!-- If we need pagination -->
+		    <div class="swiper-pagination"></div>
+		</div>
+	</div>
+</div>
+<ng-template #desktop>
+	<div class="desktop_dash">
+		<div class="custom_clearfix row_wrap">
+			<div class="col_half40">
+				<mat-card class="user_card">
+				    <div class="user_img" *ngIf="userDetail.imgpath;else noimageAvail">
+				    	<a mat-fab class="add_photo_link" color="warn" routerLink="/addphoto">
+				    		<mat-icon>edit</mat-icon>
+				    	</a>
+			        	<img class="img_resp"
+						[defaultImage]="defaultImage"
+			        	[lazyLoad]="image"
+						alt="Image 1">
+				    </div>
+				    <ng-template #noimageAvail>
+					    <div class="user_img">
+					    	<a mat-fab class="add_photo_link" color="warn" routerLink="/addphoto">
+					    		<mat-icon>add</mat-icon>
+					    	</a>
+				        	<img class="img_resp"
+				        	[defaultImage]="defNoimage"
+			        		[lazyLoad]="noimage"
+				        	alt="Image 1">
+					    </div>
+					</ng-template>
+				</mat-card>
+			</div>
+			<div class="col_half60">
+				<div class="col_3 custom_clearfix">
+					<a class="col_list" routerLink="/venues">
+						<mat-card>
+							<div class="top_card_head">SEARCH</div>
+							<div class="card_det">VENUES</div>
+						</mat-card>
+					</a>
+					<a class="col_list" routerLink="/bookhistory">
+						<mat-card>
+							<div class="top_card_head"><span>{{aprCount}}</span> EVENTS</div>
+							<div class="card_det">APPROVED</div>
+						</mat-card>
+					</a>
+					<a class="col_list" routerLink="/bookhistory">
+						<mat-card>
+							<div class="top_card_head"><span>{{pndCount}}</span> EVENTS</div>
+							<div class="card_det">PENDING</div>
+						</mat-card>
+					</a>
+				</div>
+				<mat-card class="welcome_card">
+				    Welcome! <span class="bold" *ngIf="userDetail">{{userDetail.name | titlecase}}</span>, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				    <div class="btn_wrap">
+						<a routerLink="/mydetail" mat-raised-button color="warn">Update Your Account</a>
+					</div>
+				</mat-card>
+			</div>
+		</div>
+		<h3 class="page_heading_1">TOP VENUES</h3>
+		<div class="slider_page_wrap">
+			<div class="swiper-container work_slide">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<span class="venue_user_img">
+							    		<img src="assets/images/face.jpg" alt="user1">
+							    	</span>
+							    	<p class="sub_card_head">Venue Name</p>
+							    	<p class="sub_card_head2">Bhubaneswar</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+									<span class="venue_user_img">
+							    		<img src="assets/images/face.jpg" alt="user1">
+							    	</span>
+							    	<p class="sub_card_head">Venue Name</p>
+							    	<p class="sub_card_head2">Bhubaneswar</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+									<span class="venue_user_img">
+							    		<img src="assets/images/face.jpg" alt="user1">
+							    	</span>
+							    	<p class="sub_card_head">Venue Name</p>
+							    	<p class="sub_card_head2">Bhubaneswar</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+									<span class="venue_user_img">
+							    		<img src="assets/images/face.jpg" alt="user1">
+							    	</span>
+							    	<p class="sub_card_head">Venue Name</p>
+							    	<p class="sub_card_head2">Bhubaneswar</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+									<span class="venue_user_img">
+							    		<img src="assets/images/face.jpg" alt="user1">
+							    	</span>
+							    	<p class="sub_card_head">Venue Name</p>
+							    	<p class="sub_card_head2">Bhubaneswar</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+									<span class="venue_user_img">
+							    		<img src="assets/images/face.jpg" alt="user1">
+							    	</span>
+							    	<p class="sub_card_head">Venue Name</p>
+							    	<p class="sub_card_head2">Bhubaneswar</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			    </div>
+			    <!-- If we need pagination -->
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<h3 class="page_heading_1">FOODS</h3>
+		<div class="slider_page_wrap">
+			<div class="swiper-container work_slide">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			    </div>
+			    <!-- If we need pagination -->
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<h3 class="page_heading_1">EQUIPMENTS</h3>
+		<div class="slider_page_wrap">
+			<div class="swiper-container work_slide">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a class="slide_card_wrap" routerLink="/">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">ABCD FOOD</p>
+							    	<p class="sub_card_head2">New Delhi</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</a>
+			        </div>
+			    </div>
+			    <!-- If we need pagination -->
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+	</div>
+</ng-template>

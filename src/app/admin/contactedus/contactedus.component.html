@@ -1,0 +1,9 @@
+<div class="main_dashboard">
+	<h2>Contact Us Form Inputs.</h2>
+	<div class="cont_list" *ngFor="let gtfrm of getFormDet">
+		<span class="cont_name">{{gtfrm.name}}</span>
+		<span class="cont_email">{{gtfrm.email}}</span>
+		<span class="cont_mob">{{gtfrm.mobile}}</span>
+		<div class="cont_descr">{{gtfrm.message}}</div>
+	</div>
+</div>

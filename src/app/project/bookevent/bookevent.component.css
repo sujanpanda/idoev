@@ -1,0 +1,85 @@
+.page_wrap {
+    padding: 0 16px;
+    margin: -16px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.venue_card {
+	margin-bottom: 30px;
+    overflow: hidden;
+	padding: 0;
+}
+.venue_card img {
+	display: block;
+	width: 100%;
+}
+.form_wrap {
+	display: block;
+	padding: 0 8px;
+}
+.form_wrap .mat-form-field {
+	width: 100%;
+}
+.calendar_wrap {
+	position: relative;
+}
+.page_wrap .mat-input-element, .page_wrap mat-select, .desk_book_wrap .mat-input-element, .desk_book_wrap mat-select {
+    height: 22px;
+    line-height: 22px;
+}
+.radio_wrap {
+	margin-bottom: 18px;
+}
+.page_label {
+    color: #212121;
+	display: block;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+.total_price {
+	color: #2699FB;
+	font-size: 30px;
+	font-weight: 500;
+}
+.decoration_wrap {
+	margin-bottom: 16px;
+}
+.btn_wrap {
+	margin-bottom: 30px;
+	padding: 10px 0 0;
+}
+.btn_wrap .mat-raised-button {
+	background-color: #f05758;
+	font-weight: 600;
+	font-size: 12px;
+	height: 48px;
+    line-height: 48px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.desk_book_wrap {
+	margin: 30px auto;
+	max-width: 1000px;
+}
+.desk_form_contr {
+	float: left;
+	margin: 0 0 15px 24px;
+	width: calc(50% - 12px);
+}
+.desk_form_contr:nth-child(2n+1) {
+	clear: left;
+	margin: 0 0 15px 0;
+}
+.desk_form_contr .btn_wrap {
+	margin: 0;
+	padding: 0;
+}
+.desk_form_contr .price_quote {
+	margin: 0;
+	padding: 15px 0 0;
+}
+.desk_form_contr .radio_wrap {
+	margin: 0;
+	padding: 20px 0 0;
+}

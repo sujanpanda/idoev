@@ -1,0 +1,134 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<mat-card class="missing_card">
+		<form class="missing_form" [formGroup]="idoEvForm">
+			<mat-form-field>
+				<mat-select (selectionChange)="selectionChange()" placeholder="City" name="city" #city formControlName="city">
+		      		<mat-option *ngFor="let ct of ctDetail" value="{{ct[1]}}">{{ct[1]}}</mat-option>
+		    	</mat-select>
+		    	<mat-error *ngIf="ideform.city.errors?.required && ideform.city.touched">
+					Please enter your city.
+				</mat-error>
+		  	</mat-form-field>
+			<mat-form-field>
+		    	<mat-select  placeholder="Venue" name="venue" #venue formControlName="venue">
+		      		<mat-option *ngFor="let vnu of vnuDetail" value="{{vnu[1]}}">{{vnu[1]}}</mat-option>
+		    	</mat-select>
+		    	<mat-error *ngIf="ideform.venue.errors?.required && ideform.venue.touched">
+					Please enter your venue.
+				</mat-error>
+			</mat-form-field>
+			<div class="calendar_wrap">
+				<mat-form-field	>
+				  	<mat-label>Date of missing item</mat-label>
+				  	<input type="text" [max]="todaydate" (click)="picker.open()" autocomplete="off" matInput [matDatepicker]="picker" name="date" #date formControlName="date">
+				  	<mat-error *ngIf="ideform.date.errors?.required && ideform.date.touched">
+						Please enter a valid date.
+					</mat-error>
+				  	<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				  	<mat-datepicker touchUi #picker color="warn"></mat-datepicker>
+				</mat-form-field>
+		  	</div>
+			<mat-form-field>
+		    	<input type="email" matInput placeholder="Email" name="email" #email formControlName="email">
+		    	<mat-error *ngIf="ideform.email.errors?.required && ideform.email.touched">
+					Please write your email.
+				</mat-error>
+		    	<mat-error *ngIf="ideform.email.errors?.email && ideform.email.touched">
+					Please type a valid email ID.
+				</mat-error>
+		  	</mat-form-field>
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="Missing item name" name="item" #item formControlName="item">
+		    	<mat-error *ngIf="ideform.item.errors?.required && ideform.item.touched">
+					Please write your item name.
+				</mat-error>
+		    	<mat-error *ngIf="ideform.item.errors?.pattern && ideform.item.touched">
+					Remove space before and after your item name.
+				</mat-error>
+		  	</mat-form-field>
+			<mat-form-field>
+		    	<textarea matInput placeholder="Detail Message" name="message" #message formControlName="message" row="3"></textarea>
+		    	<mat-error *ngIf="ideform.message.errors?.required && ideform.message.touched">
+					Please write your message.
+				</mat-error>
+		    	<mat-error *ngIf="ideform.message.errors?.pattern && ideform.message.touched">
+					Remove space before and after your message.
+				</mat-error>
+		  	</mat-form-field>
+		  	<div class="btn_wrap">
+				<button mat-raised-button color="warn" id="formBtn" (click)="missingReportFunc()">Report Us</button>
+			</div>
+			<div *ngIf="idoEvErrMsg" class="server_valid_box">
+				<mat-error class="server_valid" *ngFor="let errMsg of idoEvErrMsg">{{ errMsg.msg }}</mat-error>
+			</div>
+		</form>
+	</mat-card>
+</div>
+<ng-template #desktop>
+	<div class="desktop_wrap">
+		<mat-card class="missing_card">
+			<form class="missing_form" [formGroup]="idoEvForm">
+				<mat-form-field>
+					<mat-select (selectionChange)="selectionChange()" placeholder="City" name="city" #city formControlName="city">
+			      		<mat-option *ngFor="let ct of ctDetail" value="{{ct[1]}}">{{ct[1]}}</mat-option>
+			    	</mat-select>
+			    	<mat-error *ngIf="ideform.city.errors?.required && ideform.city.touched">
+						Please enter your city.
+					</mat-error>
+			  	</mat-form-field>
+				<mat-form-field>
+			    	<mat-select  placeholder="Venue" name="venue" #venue formControlName="venue">
+			      		<mat-option *ngFor="let vnu of vnuDetail" value="{{vnu[1]}}">{{vnu[1]}}</mat-option>
+			    	</mat-select>
+			    	<mat-error *ngIf="ideform.venue.errors?.required && ideform.venue.touched">
+						Please enter your venue.
+					</mat-error>
+				</mat-form-field>
+				<div class="calendar_wrap">
+					<mat-form-field	>
+					  	<mat-label>Date of missing item</mat-label>
+					  	<input type="text" [max]="todaydate" (click)="picker.open()" autocomplete="off" matInput [matDatepicker]="picker" name="date" #date formControlName="date">
+					  	<mat-error *ngIf="ideform.date.errors?.required && ideform.date.touched">
+							Please enter a valid date.
+						</mat-error>
+					  	<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+					  	<mat-datepicker touchUi #picker color="warn"></mat-datepicker>
+					</mat-form-field>
+			  	</div>
+				<mat-form-field>
+			    	<input type="email" matInput placeholder="Email" name="email" #email formControlName="email">
+			    	<mat-error *ngIf="ideform.email.errors?.required && ideform.email.touched">
+						Please write your email.
+					</mat-error>
+			    	<mat-error *ngIf="ideform.email.errors?.email && ideform.email.touched">
+						Please type a valid email ID.
+					</mat-error>
+			  	</mat-form-field>
+				<mat-form-field>
+			    	<input type="text" autocomplete="off" matInput placeholder="Missing item name" name="item" #item formControlName="item">
+			    	<mat-error *ngIf="ideform.item.errors?.required && ideform.item.touched">
+						Please write your item name.
+					</mat-error>
+			    	<mat-error *ngIf="ideform.item.errors?.pattern && ideform.item.touched">
+						Remove space before and after your item name.
+					</mat-error>
+			  	</mat-form-field>
+				<mat-form-field>
+			    	<textarea matInput placeholder="Detail Message" name="message" #message formControlName="message" row="3"></textarea>
+			    	<mat-error *ngIf="ideform.message.errors?.required && ideform.message.touched">
+						Please write your message.
+					</mat-error>
+			    	<mat-error *ngIf="ideform.message.errors?.pattern && ideform.message.touched">
+						Remove space before and after your message.
+					</mat-error>
+			  	</mat-form-field>
+			  	<div class="btn_wrap">
+					<button mat-raised-button color="warn" id="formBtn" (click)="missingReportFunc()">Report Us</button>
+				</div>
+				<div *ngIf="idoEvErrMsg" class="server_valid_box">
+					<mat-error class="server_valid" *ngFor="let errMsg of idoEvErrMsg">{{ errMsg.msg }}</mat-error>
+				</div>
+			</form>
+		</mat-card>
+	</div>
+</ng-template>

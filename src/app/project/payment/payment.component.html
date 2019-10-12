@@ -1,0 +1,54 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<div class="payment_screen" *ngIf="respBoolean;else notpaid">
+		<mat-card class="payment_card">
+			<h1>Your payment successfull</h1>
+			<p class="resp_quote">
+				Within <span class="bold">12 hours</span> your booking will be checked and confirmed. You can check your payment history from<br><a routerLink="/bookhistory" class="anchor">Booking History</a>
+			</p>
+		</mat-card>
+		<div class="btn_wrap">
+			<a routerLink="/venues" mat-raised-button color="warn">View More Venues</a>
+		</div>
+	</div>
+	<ng-template #notpaid>
+		<div class="payment_screen">
+			<mat-card class="payment_card">
+				<h1>Payment failed</h1>
+				<p class="resp_quote">
+					Something went wrong while payment attempting<br><a routerLink="/venues" class="anchor">View Venues</a>
+				</p>
+			</mat-card>
+			<div class="btn_wrap">
+				<a routerLink="/" mat-raised-button color="warn">Back to Home</a>
+			</div>
+		</div>
+	</ng-template>
+</div>
+<ng-template #desktop>
+	<div class="desk_wrap">
+		<div class="payment_screen" *ngIf="respBoolean;else notpaid">
+			<mat-card class="payment_card">
+				<h1>Your payment successfull</h1>
+				<p class="resp_quote">
+					Within <span class="bold">12 hours</span> your booking will be checked and confirmed. You can check your payment history from<br><a routerLink="/bookhistory" class="anchor">Booking History</a>
+				</p>
+			</mat-card>
+			<div class="btn_wrap">
+				<a routerLink="/venues" mat-raised-button color="warn">View More Venues</a>
+			</div>
+		</div>
+		<ng-template #notpaid>
+			<div class="payment_screen">
+				<mat-card class="payment_card">
+					<h1>Payment failed</h1>
+					<p class="resp_quote">
+						Something went wrong while payment attempting<br><a routerLink="/venues" class="anchor">View Venues</a>
+					</p>
+				</mat-card>
+				<div class="btn_wrap">
+					<a routerLink="/" mat-raised-button color="warn">Back to Home</a>
+				</div>
+			</div>
+		</ng-template>
+	</div>
+</ng-template>

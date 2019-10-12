@@ -1,0 +1,30 @@
+<div class="main_dashboard">
+	<h2>Add new City.</h2>
+	<form class="admin_form" [formGroup]="adminform">
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="City Name" name="name" formControlName="name">
+		    	<mat-error *ngIf="aform.name.errors?.required && aform.name.touched">
+					Please write city name.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="State" name="state" formControlName="state">
+		    	<mat-error *ngIf="aform.state.errors?.required && aform.state.touched">
+					Please write state name.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+	  	<div class="ibform">
+	  		<button id="adminbtn" mat-raised-button color="warn" (click)="adCity()">ADD</button>
+	  	</div>
+	  	<div class="error" *ngIf="errorMsg">{{errorMsg}}</div>
+	  	<div class="success" *ngIf="successMsg">{{successMsg}}</div>
+	</form>
+	<p>Added Cities</p>
+	<ul class="city_list">
+		<li *ngFor="let ct of ctList">{{ct.name}}</li>
+	</ul>
+</div>

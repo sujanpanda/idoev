@@ -1,0 +1,90 @@
+<div *ngIf="mobView; else desktop">
+	<form class="login_page" [formGroup]="loginForm">
+		<mat-form-field>
+	    	<input type="email" autocomplete="off" matInput placeholder="Email" name="email" formControlName="email">
+	    	<mat-error *ngIf="lform.email.errors?.required && lform.email.touched">
+				Email ID is Required.
+			</mat-error>
+			<mat-error *ngIf="lform.email.errors?.email && lform.email.touched">
+				Please type a valid email ID.
+			</mat-error>
+	  	</mat-form-field>
+	  	<div class="pass_wrap">
+			<mat-form-field>
+		    	<input [type]="hide ? 'text' : 'password'" matInput placeholder="Password" name="password" formControlName="password">
+		    	<mat-error *ngIf="lform.password.errors?.required && lform.password.touched">
+					Password is Required.
+				</mat-error>
+				<mat-error *ngIf="lform.password.errors?.minlength && lform.password.touched; else noSpace">
+					Password should be minimum 6 letters.
+				</mat-error>
+				<ng-template #noSpace>
+					<mat-error *ngIf="lform.password.errors?.pattern && lform.password.touched">
+						Password shouldn't have any spaces.
+					</mat-error>
+				</ng-template>
+		  	</mat-form-field>
+		  	<span class="pass_icon">
+		  		<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+		  	</span>
+	  	</div>
+	  	<div class="server_valid_box" *ngIf="errorMsg">
+	        <mat-error class="server_valid" *ngFor="let errMsg of errorMsg">{{ errMsg.msg }}</mat-error>
+	    </div>
+	  	<div class="btn_wrap">
+			<button id="loginbtn" mat-raised-button color="warn" (click)="loginUser()">Login</button>
+		</div>
+		<div class="forgot_pass_wrap">
+			<a>Forgot Password?</a>
+		</div>
+		<div class="dont_acc_wrap">
+			Don't have an account? <a routerLink="/register">Sign-in</a>
+		</div>
+	</form>
+</div>
+<ng-template #desktop>
+	<mat-card class="desk_log_card">
+		<form class="login_page" [formGroup]="loginForm">
+			<mat-form-field>
+		    	<input type="email" autocomplete="off" matInput placeholder="Email" name="email" formControlName="email">
+		    	<mat-error *ngIf="lform.email.errors?.required && lform.email.touched">
+					Email ID is Required.
+				</mat-error>
+				<mat-error *ngIf="lform.email.errors?.email && lform.email.touched">
+					Please type a valid email ID.
+				</mat-error>
+		  	</mat-form-field>
+		  	<div class="pass_wrap">
+				<mat-form-field>
+			    	<input [type]="hide ? 'text' : 'password'" matInput placeholder="Password" name="password" formControlName="password">
+			    	<mat-error *ngIf="lform.password.errors?.required && lform.password.touched">
+						Password is Required.
+					</mat-error>
+					<mat-error *ngIf="lform.password.errors?.minlength && lform.password.touched; else noSpace">
+						Password should be minimum 6 letters.
+					</mat-error>
+					<ng-template #noSpace>
+						<mat-error *ngIf="lform.password.errors?.pattern && lform.password.touched">
+							Password shouldn't have any spaces.
+						</mat-error>
+					</ng-template>
+			  	</mat-form-field>
+			  	<span class="pass_icon">
+			  		<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+			  	</span>
+		  	</div>
+		  	<div class="server_valid_box" *ngIf="errorMsg">
+		        <mat-error class="server_valid" *ngFor="let errMsg of errorMsg">{{ errMsg.msg }}</mat-error>
+		    </div>
+		  	<div class="btn_wrap">
+				<button id="loginbtn" mat-raised-button color="warn" (click)="loginUser()">Login</button>
+			</div>
+			<div class="forgot_pass_wrap">
+				<a>Forgot Password?</a>
+			</div>
+		</form>
+	</mat-card>
+	<div class="dont_acc_wrap">
+		Don't have an account? <a routerLink="/register">Sign-in</a>
+	</div>
+</ng-template>

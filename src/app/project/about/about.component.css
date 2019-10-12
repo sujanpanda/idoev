@@ -1,0 +1,97 @@
+.page_wrap {
+    padding: 0 16px;
+    margin: -16px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.about_card {
+	margin-bottom: 30px;
+	overflow: hidden;
+	padding: 0;
+}
+.about_iframe_wrap {
+	padding: 62% 100% 0 0;
+	position: relative;
+}
+.about_card iframe {
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+}
+.main_heading {
+	color: #212121;
+	font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+.main_quote {
+	color: #666;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 26px;
+	margin-bottom: 16px;
+}
+.second_quote {
+	color: #666;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	margin-bottom: 16px;
+}
+.about_image {
+	display: block;
+	margin: 0 auto 24px;
+	max-width: 100%;
+}
+.desk_about {
+	margin: 0 auto 30px;
+	max-width: 1000px;
+	padding: 20px 0 0;
+}
+.desk_about_card, .desk_about_card2 {
+	float: left;
+	height: 315px;
+	overflow: hidden;
+	padding: 0;
+	width: 450px;
+}
+.desk_about_card2 {
+	float: right;
+}
+.desk_box_l {
+	padding: 0 0 0 480px;
+    margin-bottom: 50px;
+}
+.desk_box_l.mb_0 {
+    margin-bottom: 0;
+}
+.desk_box_2 {
+	padding: 0 480px 0 0;
+    margin-bottom: 50px;
+}
+.desk_tb {
+	display: table;
+	height: 315px;
+}
+.desk_tc {
+	display: table-cell;
+	vertical-align: middle;
+}
+.desk_seperator {
+	font-size: 0;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+	background-color: #d0d0d0;
+	max-width: 500px;
+	margin: 0 auto 50px;
+	height: 1px;
+}
+.marg_auto {
+	margin: auto;
+}
+.desk_tc .about_image {
+	margin: 0;
+}

@@ -1,0 +1,147 @@
+<div *ngIf="checkAdmin; else notadmin">
+	<div class="desk_header">
+		<div class="desk_top">
+			<a routerLink="/"><img src="/assets/images/logo.png" alt="logo"></a>
+			<div class="desk_menu_wrap">
+				<ul class="desk_menu">
+					<li><a routerLink="/" (click)="logoutUser()">LOGOUT</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<ng-template #notadmin>
+	<div *ngIf="mobView; else desktop">
+		<div *ngIf="checkToken; else notlogged">
+			<mat-sidenav-container>
+				<mat-sidenav #sidenav>
+					<div class="menu_logo">
+						<a routerLink="/" (click)="sidenav.close()"><img src="/assets/images/logo.png" alt="logo"></a>
+					</div>
+				    <ul class="sidenav_list">
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/dashboard"><span class="menu_icons"><img src="/assets/images/dashboard.svg" alt="dashboard"></span>DASHBOARD</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/mydetail"><span class="menu_icons"><img src="/assets/images/mydetail.svg" alt="mydetail"></span>MY DETAILS</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/bookhistory"><span class="menu_icons"><img src="/assets/images/bookhistory.svg" alt="bookhistory"></span>BOOKING HISTORY</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/venues"><span class="menu_icons"><img src="/assets/images/location.svg" alt="location"></span>VIEW VENUES</a>
+						</li>
+						<li style="padding:20px 0;">
+							<mat-divider></mat-divider>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/home"><span class="menu_icons"><img src="/assets/images/home.svg" alt="home"></span>HOME</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/about"><span class="menu_icons"><img src="/assets/images/about_us.svg" alt="about"></span>ABOUT US</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/contact"><span class="menu_icons"><img src="/assets/images/contact.svg" alt="contact"></span>CONTACT US</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" (click)="logoutUser()" routerLink="/"><span class="menu_icons"><img src="/assets/images/logout.svg" alt="logout"></span>LOGOUT</a>
+						</li>
+					</ul>
+				</mat-sidenav>
+				<mat-sidenav-content>
+					<div class="header" id="logo_wrap">
+						<div class="menu_wrap">
+							<button mat-icon-button (click)="sidenav.open()"><mat-icon>menu</mat-icon></button>
+						</div>
+						<div class="mid_wrap">
+							<span class="mid_menu_text">{{routerNm}}</span>
+						</div>
+						<div class="right_menu">
+							<button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>more_vert</mat-icon></button>
+							<mat-menu #beforeMenu="matMenu" xPosition="before">
+							  	<a routerLink="/givefeedback" mat-menu-item>Give us Feedback</a>
+							  	<a routerLink="/faq" mat-menu-item>FAQ</a>
+							  	<a routerLink="/reportmissing" mat-menu-item>Report Missing</a>
+							</mat-menu>
+						</div>
+					</div>
+				</mat-sidenav-content>
+			</mat-sidenav-container>
+		</div>
+		<ng-template #notlogged>
+			<mat-sidenav-container>
+				<mat-sidenav #sidenav>
+					<div class="menu_logo">
+						<a routerLink="/" (click)="sidenav.close()"><img src="/assets/images/logo.png" alt="logo"></a>
+					</div>
+					<ul class="sidenav_list">
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/home"><span class="menu_icons"><img src="/assets/images/home.svg" alt="home"></span>HOME</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/venues"><span class="menu_icons"><img src="/assets/images/location.svg" alt="location"></span>VIEW VENUES</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/about"><span class="menu_icons"><img src="/assets/images/about_us.svg" alt="about"></span>ABOUT US</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/login"><span class="menu_icons"><img src="/assets/images/login.svg" alt="login"></span>LOGIN</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/register"><span class="menu_icons"><img src="/assets/images/register.svg" alt="register"></span>REGISTER</a>
+						</li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+							<a mat-menu-item (click)="sidenav.close()" routerLink="/contact"><span class="menu_icons"><img src="/assets/images/contact.svg" alt="contact"></span>CONTACT US</a>
+						</li>
+					</ul>
+				</mat-sidenav>
+				<mat-sidenav-content>
+					<div class="header" id="logo_wrap">
+						<div class="menu_wrap">
+							<button mat-icon-button (click)="sidenav.open()"><mat-icon>menu</mat-icon></button>
+						</div>
+						<div class="mid_wrap">
+							<a class="logo_link" routerLink="/">
+								<img src="/assets/images/logo.png" alt="logo">
+							</a>
+						</div>
+						<div class="right_menu">
+							<button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>more_vert</mat-icon></button>
+							<mat-menu #beforeMenu="matMenu" xPosition="before">
+							  	<a routerLink="/givefeedback" mat-menu-item>Give us Feedback</a>
+							  	<a routerLink="/faq" mat-menu-item>FAQ</a>
+							  	<a routerLink="/reportmissing" mat-menu-item>Report Missing</a>
+							</mat-menu>
+						</div>
+					</div>
+				</mat-sidenav-content>
+			</mat-sidenav-container>
+		</ng-template>
+	</div>
+	<!-- Desktop Here... -->
+	<ng-template #desktop>
+		<div class="desk_header">
+			<div class="desk_top">
+				<a routerLink="/"><img src="/assets/images/logo.png" alt="logo"></a>
+				<div class="desk_menu_wrap">
+					<ul class="desk_menu" *ngIf="checkTokenDesk; else notloggedin">
+						<li><a routerLink="/dashboard">DASHBOARD</a></li>
+						<li><a routerLink="/mydetail">MY DETAILS</a></li>
+						<li><a routerLink="/bookhistory">BOOKING HISTORY</a></li>
+						<li><a routerLink="/venues">VIEW VENUES</a></li>
+						<li><a routerLink="/" (click)="logoutUser()">LOGOUT</a></li>
+					</ul>
+					<ng-template #notloggedin>
+						<ul class="desk_menu">
+							<li><a routerLink="/about">About Us</a></li>
+							<li><a routerLink="/venues">View Venues</a></li>
+							<li><a routerLink="/login">Login</a></li>
+							<li><a routerLink="/register">Register</a></li>
+							<li><a routerLink="/contact">Contact Us</a></li>
+						</ul>
+					</ng-template>
+				</div>
+			</div>
+		</div>
+	</ng-template>
+</ng-template>

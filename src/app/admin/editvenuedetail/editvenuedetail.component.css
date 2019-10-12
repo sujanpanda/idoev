@@ -1,0 +1,59 @@
+.admin_form {
+	margin-bottom: 20px;
+}
+.admin_form .mat-input-element {
+    height: 22px;
+    line-height: 22px;
+}
+.mat-select {
+    line-height: 22px;
+}
+.mat-raised-button.mat-warn {
+    background-color: #f05758;
+    font-weight: 400;
+    font-size: 14px;
+    height: 48px;
+    line-height: 48px;
+    text-transform: uppercase;
+    min-width: 100px;
+}
+.mat-warn.mat-raised-button[disabled] {
+	background-color: rgba(0,0,0,0.26);
+}
+
+.admin_form textarea.mat-input-element {
+    height: 42px;
+    resize: none;
+}
+.ibform, .ibform_big {
+    display: inline-block;
+    margin: 0 16px 0 0;
+    vertical-align: top;
+}
+.ibform mat-form-field {
+    width: 300px;
+}
+.ibform_big mat-form-field {
+    width: 615px;
+}
+.pt_2x {
+    padding-top: 20px;
+}
+.city_list {
+    padding: 0 0 0 30px;
+}
+.error {
+    color: #f44336;
+    font-size: 14px;
+}
+.success {
+    color: green;
+    font-size: 14px;
+}
+.main_quote {
+    color: #212121;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 16px;
+}

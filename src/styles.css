@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import 'https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap';
+@import "~ngx-material-time-select/prebuilt-themes/indigo-pink.css";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+body {
+	margin: 0;
+	padding: 0;
+}
+.mobile {
+	border-left: solid 1px #e0e0e0;
+	border-right: solid 1px #e0e0e0;
+	margin: 0 auto;
+	max-width: 400px;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+}
+.swiper-pagination-bullet {
+	background-color: #fff;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	display: inline-block;
+	height: 4px;
+    margin: 0 3px;
+	width: 4px;
+}
+.latest_work_wrap .swiper-pagination-bullet, .slider_page_wrap .swiper-pagination-bullet {
+	background-color: #aaa;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+	background-color: #f05758;
+}
+.custom_clearfix:after, .custom_clearfix:before {
+  	content: "";
+  	clear: both;
+  	display: table;
+}
+.mobile .mat-drawer, .mobile .mat-drawer-backdrop {
+	position: absolute;
+}
+.ng5-slider .ng5-slider-pointer:focus, .ng5-slider .ng5-slider-pointer {
+	outline: 0;
+}
+.ng5-slider span.ng5-slider-pointer, .ng5-slider span.ng5-slider-selection {
+	background-color: #2699FB;
+}
+.calendar_wrap mat-form-field .mat-icon-button, .timepick_wrap .mat-form-field-suffix .mat-icon-button {
+	height: 24px;
+	top: -6px;
+	width: 24px;
+}
+.calendar_wrap .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon, 
+.timepick_wrap .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-time-select-toggle-default-icon {
+	width: 16px;
+}
+.blue-snackbar {
+	background-color: #2196F3;
+	color: #fff;
+}
+label.mat-form-field-label, div.mat-select-value {
+ 	line-height: 18px;
+ }
+mat-time-select-content .mat-time-select-table .ng-star-inserted .mat-time-ampm {
+	border-top: 1px solid rgba(0,0,0,0.12);
+	padding: 10px 0;
+}
+@media only screen and (max-width: 767px) {
+	.mobile {
+		max-width: none;
+		border: none;
+	}	
+	.mobile .mat-drawer, .mobile .mat-drawer-backdrop {
+		position: fixed;
+	}
+}

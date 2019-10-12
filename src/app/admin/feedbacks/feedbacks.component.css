@@ -1,0 +1,40 @@
+.main_dashboard {
+	margin: 0 0 30px 0;
+}
+.cont_list {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	-o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	float: left;
+	line-height: 36px;
+	margin-bottom: 8px;
+	width: 100%;
+}
+.cont_list:last-child {
+	margin-bottom: 30px;
+}
+.cont_name, .cont_email, .cont_mob {
+	float: left;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 0 0 0 16px;
+}
+.cont_email, .cont_mob {
+	font-size: 14px;
+	font-weight: 400;
+	padding: 0 0 0 36px;
+}
+.cont_mob {
+	color: #2699FB;
+}
+.cont_descr {
+	float: left;
+    width: 100%;
+    padding: 7px 16px 10px;
+    line-height: 24px;
+    border-top: solid 1px #ddd;
+    box-sizing: border-box
+}

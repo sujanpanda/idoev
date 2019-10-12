@@ -1,0 +1,40 @@
+.page_wrap {
+    padding: 0 16px;
+    margin: -16px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.payment_screen {
+	height: 400px;
+	text-align: center;
+}
+.payment_screen h1 {
+	padding-top: 40px;
+	margin-bottom: 30px;
+}
+.payment_screen .resp_quote {
+	margin-bottom: 40px;
+}
+.anchor {
+	color: #2699FB;
+    text-decoration: none;
+}
+.btn_wrap {
+	padding: 30px 0 0;
+}
+.btn_wrap .mat-raised-button {
+    background-color: #f05758;
+    font-weight: 600;
+    font-size: 12px;
+    height: 48px;
+    line-height: 48px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.bold {
+	font-weight: bold;
+}
+.desk_wrap {
+    margin: 30px auto;
+    max-width: 1000px;
+}

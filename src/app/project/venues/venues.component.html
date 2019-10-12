@@ -1,0 +1,422 @@
+<div *ngIf="mobView; else desktop">
+	<div class="page_wrap" id="venuDetPage">
+		<mat-card class="venue_card">
+			<form action="#" class="mydetail_form" [formGroup]="idoEvForm">
+				<mat-form-field>
+			    	<mat-select placeholder="Venue Type" #venutype name="venutype" formControlName="venutype">
+			      		<mat-option *ngFor="let event of eventType" value="{{event.type}}">{{event.type | titlecase}}</mat-option>
+			    	</mat-select>
+		      		<mat-error *ngIf="ideform.venutype.errors?.required && ideform.venutype.touched">
+						Choose event type.
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field>
+			    	<mat-select placeholder="City" #ctname name="ctname" formControlName="ctname">
+			      		<mat-option *ngFor="let cities of ctList" value="{{cities.name | titlecase}}">{{cities.name | titlecase}}</mat-option>
+			    	</mat-select>
+			    	<mat-error *ngIf="ideform.ctname.errors?.required && ideform.ctname.touched">
+						Please enter your city.
+					</mat-error>
+				</mat-form-field>
+				<div class="slider_wrap">
+					<label class="price_range">BASE PRICE RANGE</label>
+					<ng5-slider
+						[(value)]="minValue"
+						[(highValue)]="maxValue"
+						[options]="options"
+						(valueChange)="priceChangeBelow($event)"
+						(highValueChange)="priceChangeUp($event)"
+					></ng5-slider>
+				</div>
+				<div class="two_btn_wrap custom_clearfix">
+					<a mat-stroked-button color="warn" (click)="resetFilter()" id="reset_form">Reset Filter</a>
+					<button id="event_btn" mat-raised-button color="warn" (click)="submitFilter()">Apply</button>
+				</div>
+			</form>
+		</mat-card>
+		<div clss="top_ven_wrap" *ngIf="topVen">
+			<h3 class="page_heading_1">TOP VENUES</h3>
+			<div class="venues_listing custom_clearfix">
+				<a class="venue_card_wrap" routerLink="/venuedetail">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<span class="venue_user_img">
+					    		<img src="assets/images/face.jpg" alt="user1">
+					    	</span>
+					    	<p class="sub_card_head">Venue Name</p>
+					    	<p class="sub_card_head2">Bhubaneswar</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+				<a class="venue_card_wrap" routerLink="/venuedetail">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<span class="venue_user_img">
+					    		<img src="assets/images/face.jpg" alt="user1">
+					    	</span>
+					    	<p class="sub_card_head">Venue Name</p>
+					    	<p class="sub_card_head2">Bhubaneswar</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+				<a class="venue_card_wrap" routerLink="/venuedetail">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<span class="venue_user_img">
+					    		<img src="assets/images/face.jpg" alt="user1">
+					    	</span>
+					    	<p class="sub_card_head">Venue Name</p>
+					    	<p class="sub_card_head2">Bhubaneswar</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+				<a class="venue_card_wrap" routerLink="/venuedetail">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<span class="venue_user_img">
+					    		<img src="assets/images/face.jpg" alt="user1">
+					    	</span>
+					    	<p class="sub_card_head">Venue Name</p>
+					    	<p class="sub_card_head2">Bhubaneswar</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+		</div>
+		<div *ngIf="venResult">
+			<h3 class="page_heading_1">SEARCH RESULT</h3>
+			<div class="venues_listing custom_clearfix mb-0" *ngIf="resToShow">
+				<a class="venue_card_wrap" *ngFor="let result of resList" routerLink="/venuedetail/{{result.id}}">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<span class="venue_user_img">
+					    		<img src="assets/images/face.jpg" alt="user1">
+					    	</span>
+					    	<p class="sub_card_head">{{result.name}}</p>
+					    	<p class="sub_card_head2">{{result.city}}</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+			<div *ngIf="noRes">
+				No result
+			</div>
+			<div class="load_card_list" *ngIf="searchLoader">
+				<div class="load_card_half">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div><div class="load_card_half">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<ng-template #desktop>
+	<div class="desk_venues custom_clearfix" id="venuDetPage">
+		<mat-card class="venue_card">
+			<form action="#" class="mydetail_form" [formGroup]="idoEvForm">
+				<mat-form-field>
+			    	<mat-select placeholder="Venue Type" #venutype name="venutype" formControlName="venutype">
+			      		<mat-option *ngFor="let event of eventType" value="{{event.type}}">{{event.type | titlecase}}</mat-option>
+			    	</mat-select>
+		      		<mat-error *ngIf="ideform.venutype.errors?.required && ideform.venutype.touched">
+						Choose event type.
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field>
+			    	<mat-select placeholder="City" #ctname name="ctname" formControlName="ctname">
+			      		<mat-option *ngFor="let cities of ctList" value="{{cities.name | titlecase}}">{{cities.name | titlecase}}</mat-option>
+			    	</mat-select>
+			    	<mat-error *ngIf="ideform.ctname.errors?.required && ideform.ctname.touched">
+						Please enter your city.
+					</mat-error>
+				</mat-form-field>
+				<div class="slider_wrap">
+					<label class="price_range">BASE PRICE RANGE</label>
+					<ng5-slider
+						[(value)]="minValue"
+						[(highValue)]="maxValue"
+						[options]="options"
+						(valueChange)="priceChangeBelow($event)"
+						(highValueChange)="priceChangeUp($event)"
+					></ng5-slider>
+				</div>
+				<div class="two_btn_wrap custom_clearfix">
+					<a mat-stroked-button color="warn" (click)="resetFilter()" id="reset_form">Reset Filter</a>
+					<button id="event_btn" mat-raised-button color="warn" (click)="submitFilter()">Apply</button>
+				</div>
+			</form>
+		</mat-card>
+		<div class="right_venues">
+			<div clss="top_ven_wrap" *ngIf="topVen">
+				<h3 class="page_heading_1">TOP VENUES</h3>
+				<div class="venues_listing custom_clearfix">
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+					<a class="venue_card_wrap" routerLink="/venuedetail">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">Venue Name</p>
+						    	<p class="sub_card_head2">Bhubaneswar</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+				</div>
+			</div>
+			<div *ngIf="venResult">
+				<h3 class="page_heading_1">SEARCH RESULT</h3>
+				<div class="venues_listing custom_clearfix mb-0" *ngIf="resToShow">
+					<a class="venue_card_wrap" *ngFor="let result of resList" routerLink="/venuedetail/{{result.id}}">
+						<mat-card>
+							<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+							<mat-card-content>
+						    	<span class="venue_user_img">
+						    		<img src="assets/images/face.jpg" alt="user1">
+						    	</span>
+						    	<p class="sub_card_head">{{result.name}}</p>
+						    	<p class="sub_card_head2">{{result.city}}</p>
+						  	</mat-card-content>
+						</mat-card>
+					</a>
+				</div>
+				<div *ngIf="noRes">
+					No result
+				</div>
+				<div class="load_card_list" *ngIf="searchLoader">
+					<div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>

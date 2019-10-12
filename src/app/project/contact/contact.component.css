@@ -1,0 +1,93 @@
+.page_wrap {
+    padding: 0 16px;
+    margin: -16px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.contact_form mat-form-field {
+	width: 100%;
+}
+.contact_form textarea.mat-input-element {
+	height: 66px;
+	line-height: 22px;
+	resize: none;
+}
+.btn_wrap {
+	padding: 6px 0 0;
+}
+.btn_wrap .mat-raised-button {
+	background-color: #f05758;
+	font-weight: 600;
+	font-size: 12px;
+	height: 48px;
+    line-height: 48px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.contact_card {
+	margin-bottom: 16px;
+}
+.or_design {
+	color: #666;
+	display: block;
+	margin-bottom: 16px;
+	position: relative;
+	text-align: center;
+}
+.or_design:before, .or_design:after {
+	content: "";
+    position: absolute;
+    right: 50%;
+    margin: 0 -65px 0 0;
+    width: 50px;
+    border-bottom: solid 1px #ccc;
+    top: 50%;
+}
+.or_design:after {
+	left: 50%;
+	right: auto;
+	margin: 0 0 0 -65px;
+}
+.main_quote {
+	font-size: 18px;
+	line-height: 26px;
+}
+.contact_form input {
+    height: 22px;
+    line-height: 22px;
+}
+.desk_cont_wrap {
+	width: 1000px;
+	margin: 0 auto 30px;
+	padding: 30px 0 0;
+}
+.desk_cont_wrap .contact_card {
+	-o-box-sizing: border-box;
+  	-ms-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	box-sizing: border-box;
+	max-width: 600px;
+	margin: 0 auto 30px;
+	padding: 50px 24px;
+}
+.two_half {
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	padding: 0 10px;
+	width: 50%;
+	text-align: center;
+}
+.desk_cont_wrap .btn_wrap .mat-raised-button {
+	font-size: 14px;
+	font-weight: 400;
+}
+.cont_quote a {
+    color: #2699FB;
+    text-decoration: none;
+}

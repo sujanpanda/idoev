@@ -1,0 +1,136 @@
+.page_wrap {
+    padding: 0 16px;
+    margin: -16px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.add_photo_card {
+	margin-bottom: 30px;
+}
+.main_quote {
+	color: #212121;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 26px;
+	margin-bottom: 16px;
+}
+.file_hidden {
+	position: fixed;
+	left: -200px;
+	bottom: -200px;
+	opacity: 0;
+}
+.img_crop_wrap {
+	display: none;
+	margin: 0 0 18px -10px;
+}
+.browse_btn {
+	background-color: #eee;
+	border: solid 1px #2699fb;
+	cursor: pointer;
+	display: block;
+	height: 48px;
+	line-height: 48px;
+    margin: 0 0 4px;
+	padding: 0 0 0 16px;
+	text-align: left;
+	width: 100%;
+}
+.browse_btn:hover, .browse_btn:hover, .browse_btn:focus {
+	outline: none;
+}
+.browse_btn span {
+    float: right;
+    height: 46px;
+    width: 100px;
+    text-align: center;
+    background-color: #2699fb;
+    color: #fff;
+    margin: 0;
+    line-height: 48px;
+    border-left: solid 1px #2699fb;
+}
+.btn_wrap .mat-raised-button {
+	background-color: #f05758;
+	font-weight: 600;
+	font-size: 12px;
+	height: 48px;
+    line-height: 48px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.btn_wrap .mat-raised-button[disabled] {
+	background-color:rgba(0,0,0,.12)
+}
+.note_quote {
+	margin-bottom: 18px;
+	font-style: italic;
+    font-size: 12px;
+    color: #666;
+}
+.loader {
+	background-color: #eee;
+	border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	display: none;
+	min-height: 200px;
+	margin: 0 0 18px;
+}
+.load_bg {
+    -webkit-animation: loading 0.8s infinite;
+    -moz-animation: loading 0.8s infinite;
+    animation: loading 0.8s infinite;
+    background-color: #e0e0e0;
+}
+.error {
+  color: #f05758;
+  font-size: 12px;
+  font-style: italic;
+  padding-top: 8px;
+}
+.desktop_wrap {
+  margin: 30px auto 0;
+  max-width: 700px;
+}
+.desktop_wrap .btn_wrap .mat-raised-button {
+  font-size: 14px;
+  font-weight: 400;
+}
+@-webkit-keyframes loading {
+  0% {
+    background-color: #eee;
+  }
+  40% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #eee;
+  }
+}
+
+@-moz-keyframes loading {
+  0% {
+    background-color: #eee;
+  }
+  40% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #eee;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-color: #eee;
+  }
+  40% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #eee;
+  }
+}

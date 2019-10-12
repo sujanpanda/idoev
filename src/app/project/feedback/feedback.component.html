@@ -1,0 +1,90 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<mat-card class="feedback_card">
+		<form class="feedback_form" [formGroup]="feedbackForm">
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="Name" name="name" #name formControlName="name">
+		    	<mat-error *ngIf="feedform.name.errors?.required && feedform.name.touched">
+					Please write your name.
+				</mat-error>
+				<mat-error *ngIf="feedform.name.errors?.minlength && feedform.name.touched; else notValid">
+					Name should be minimum 3 letters.
+				</mat-error>
+				<ng-template #notValid>
+					<mat-error *ngIf="feedform.name.errors?.pattern && feedform.name.touched">
+						Remove space before and after your name.
+					</mat-error>
+				</ng-template>
+		  	</mat-form-field>
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="Title" name="title" #title formControlName="title">
+		    	<mat-error *ngIf="feedform.title.errors?.required && feedform.title.touched">
+					Please write your title.
+				</mat-error>
+		    	<mat-error *ngIf="feedform.title.errors?.pattern && feedform.title.touched">
+					Remove space before and after your title.
+				</mat-error>
+		  	</mat-form-field>
+			<mat-form-field>
+		    	<textarea matInput placeholder="Message" row="3" name="message" #message formControlName="message"></textarea>
+		    	<mat-error *ngIf="feedform.message.errors?.required && feedform.message.touched">
+					Please write your message.
+				</mat-error>
+		    	<mat-error *ngIf="feedform.message.errors?.pattern && feedform.message.touched">
+					Remove space before and after your message.
+				</mat-error>
+		  	</mat-form-field>
+		  	<div class="btn_wrap">
+				<button id="feedbackbtn" (click)="updateFeedback()" mat-raised-button color="warn">Send</button>
+			</div>
+			<div class="server_valid_box" *ngIf="feedbackErrMsg">
+		        <mat-error class="server_valid" *ngFor="let errMsg of feedbackErrMsg">{{ errMsg.msg }}</mat-error>
+		    </div>
+		</form>
+	</mat-card>
+</div>
+<ng-template #desktop>
+	<div class="desktop_wrap">
+		<mat-card class="feedback_card">
+			<form class="feedback_form" [formGroup]="feedbackForm">
+				<mat-form-field>
+			    	<input type="text" autocomplete="off" matInput placeholder="Name" name="name" #name formControlName="name">
+			    	<mat-error *ngIf="feedform.name.errors?.required && feedform.name.touched">
+						Please write your name.
+					</mat-error>
+					<mat-error *ngIf="feedform.name.errors?.minlength && feedform.name.touched; else notValid">
+						Name should be minimum 3 letters.
+					</mat-error>
+					<ng-template #notValid>
+						<mat-error *ngIf="feedform.name.errors?.pattern && feedform.name.touched">
+							Remove space before and after your name.
+						</mat-error>
+					</ng-template>
+			  	</mat-form-field>
+				<mat-form-field>
+			    	<input type="text" autocomplete="off" matInput placeholder="Title" name="title" #title formControlName="title">
+			    	<mat-error *ngIf="feedform.title.errors?.required && feedform.title.touched">
+						Please write your title.
+					</mat-error>
+			    	<mat-error *ngIf="feedform.title.errors?.pattern && feedform.title.touched">
+						Remove space before and after your title.
+					</mat-error>
+			  	</mat-form-field>
+				<mat-form-field>
+			    	<textarea matInput placeholder="Message" row="3" name="message" #message formControlName="message"></textarea>
+			    	<mat-error *ngIf="feedform.message.errors?.required && feedform.message.touched">
+						Please write your message.
+					</mat-error>
+			    	<mat-error *ngIf="feedform.message.errors?.pattern && feedform.message.touched">
+						Remove space before and after your message.
+					</mat-error>
+			  	</mat-form-field>
+			  	<div class="btn_wrap">
+					<button id="feedbackbtn" (click)="updateFeedback()" mat-raised-button color="warn">Send</button>
+				</div>
+				<div class="server_valid_box" *ngIf="feedbackErrMsg">
+			        <mat-error class="server_valid" *ngFor="let errMsg of feedbackErrMsg">{{ errMsg.msg }}</mat-error>
+			    </div>
+			</form>
+		</mat-card>
+	</div>
+</ng-template>

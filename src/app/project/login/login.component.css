@@ -1,0 +1,74 @@
+.login_page {
+	padding: 50px 24px 0;
+}
+.login_page .mat-form-field {
+	width: 100%;
+}
+.login_page .mat-input-element {
+	height: 22px;
+	line-height: 22px;
+}
+.btn_wrap {
+	margin-bottom: 16px;
+	padding: 16px 0 0;
+}
+.btn_wrap .mat-raised-button {
+	background-color: #f05758;
+	font-weight: 600;
+	font-size: 12px;
+	height: 48px;
+    line-height: 48px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.btn_wrap .mat-raised-button[disabled] {
+	background-color: rgba(0,0,0,0.26);
+}
+.forgot_pass_wrap {
+	margin-bottom: 24px;
+	text-align: right;
+}
+.forgot_pass_wrap a, .dont_acc_wrap a {
+	color: #2699FB;
+	text-decoration: none;
+}
+.dont_acc_wrap {
+	margin-bottom: 26px;
+	text-align: center;
+}
+.pass_wrap {
+	position: relative;
+}
+.pass_icon {
+	cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 3px;
+    top: 13px;
+    padding: 4px;
+}
+.pass_icon mat-icon {
+	display: block;
+}
+.desk_log_card {
+	-o-box-sizing: border-box;
+  	-ms-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	box-sizing: border-box;
+	margin: 30px auto;
+	max-width: 600px;
+}
+.desk_log_card .register_page {
+	padding: 50px 24px;
+}
+.desk_log_card .terms_quote {
+	margin: 0;
+}
+.desk_log_card .register_page {
+	padding: 50px 24px;
+}
+.desk_log_card .btn_wrap .mat-raised-button {
+	font-size: 14px;
+	font-weight: 400;
+}

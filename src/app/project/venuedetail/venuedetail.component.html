@@ -1,0 +1,170 @@
+<div class="page_wrap" id="venuDetPage" *ngIf="mobView; else desktop">
+	<div *ngIf="venueShowide == true">
+		<mat-card class="venuedetail_card" *ngIf="venueDet">
+			<h1 class="venu_heading">{{venueDet?.name}}</h1>
+			<div class="user_detail custom_clearfix">
+				<span class="venue_user_img">
+					<img src="/assets/images/face.jpg" alt="user1">
+				</span>
+				<p class="sub_card_head">{{venueDet?.owner}}</p>
+			</div>
+			<p class="venue_quote">{{venueDet?.detail}}</p>
+			<div class="venue_image">
+				<img src="/assets/images/gallery/mobile_1.jpg">
+			</div>
+			<div class="social_feature custom_clearfix">
+				<span class="location_anch custom_clearfix"><img src="/assets/images/location.svg" alt="location">{{venueDet?.city | uppercase}}</span>
+				<a (click)="likeVenue()" id="likeBtn" class="like_anch custom_clearfix"><img src="/assets/images/heart_icon.svg" alt="like"><span *ngIf="likeCnts !== ''">{{likeCnts}}</span></a>
+				<a routerLink="/" class="share_anch custom_clearfix"><img src="/assets/images/share_icon.svg" alt="share">SHARE</a>
+			</div>
+			<div class="book_this_wrap">
+				<span class="price_wrap"><span class="price_sign">&#8377;</span> {{venueDet?.baseprice}}.00</span><a (click)="venueBook()" mat-raised-button color="warn">Book Now</a>
+			</div>
+		</mat-card>
+	</div>
+    <div class="page_load_wrap no_paddLR" *ngIf="venueShowide == false">
+		<div class="load_card_normal">
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_top_card load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_btn load_bg"></div>
+		</div>
+		<div class="hgt_30"></div>
+	</div>
+	<h3 class="page_heading_1">TOP VENUES</h3>
+	<div id="parentVenuList" class="venues_listing custom_clearfix">
+		<a (click)="venueDetCall()" class="venue_card_wrap" *ngFor="let allct of allcities" [routerLink]="['/venuedetail/', allct.id]">
+			<mat-card>
+				<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+				<mat-card-content>
+			    	<p class="sub_card_head">{{allct.name}}</p>
+			    	<p class="sub_card_head2">{{allct.city}}</p>
+			  	</mat-card-content>
+			</mat-card>
+		</a>
+	</div>
+	<div class="load_card_list" *ngIf="venueRes">
+		<div class="load_card_half">
+			<div class="load_card_img load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+		</div><div class="load_card_half">
+			<div class="load_card_img load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+		</div>
+	</div>
+</div>
+<ng-template #desktop>
+	<div class="desk_page_det" id="venuDetPage">
+		<div *ngIf="venueShowide == true">
+			<mat-card class="venuedetail_card" *ngIf="venueDet">
+				<h1 class="venu_heading">{{venueDet?.name}}</h1>
+				<div class="user_detail custom_clearfix">
+					<span class="venue_user_img">
+						<img src="/assets/images/face.jpg" alt="user1">
+					</span>
+					<p class="sub_card_head">{{venueDet?.owner}}</p>
+				</div>
+				<p class="venue_quote">{{venueDet?.detail}}</p>
+				<div class="venue_image">
+					<img src="/assets/images/gallery/mobile_1.jpg">
+				</div>
+				<div class="social_feature custom_clearfix">
+					<span class="location_anch custom_clearfix"><img src="/assets/images/location.svg" alt="location">{{venueDet?.city | uppercase}}</span>
+					<a (click)="likeVenue()" id="likeBtn" class="like_anch custom_clearfix"><img src="/assets/images/heart_icon.svg" alt="like"><span *ngIf="likeCnts !== ''">{{likeCnts}}</span></a>
+					<a routerLink="/" class="share_anch custom_clearfix"><img src="/assets/images/share_icon.svg" alt="share">SHARE</a>
+				</div>
+				<div class="book_this_wrap">
+					<span class="price_wrap"><span class="price_sign">&#8377;</span> {{venueDet?.baseprice}}.00</span><a (click)="venueBook()" mat-raised-button color="warn">Book Now</a>
+				</div>
+			</mat-card>
+		</div>
+	    <div class="page_load_wrap no_paddLR" *ngIf="venueShowide == false">
+			<div class="load_card_normal">
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_top_card load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_btn load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+		<h3 class="page_heading_1">TOP VENUES</h3>
+		<div id="parentVenuList" class="venues_listing custom_clearfix">
+			<a (click)="venueDetCall()" class="venue_card_wrap" *ngFor="let allct of allcities" [routerLink]="['/venuedetail/', allct.id]">
+				<mat-card>
+					<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+					<mat-card-content>
+				    	<p class="sub_card_head">{{allct.name}}</p>
+				    	<p class="sub_card_head2">{{allct.city}}</p>
+				  	</mat-card-content>
+				</mat-card>
+			</a>
+		</div>
+		<div class="load_card_list" *ngIf="venueRes">
+			<div class="load_card_half">
+				<div class="load_card_img load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+			</div><div class="load_card_half">
+				<div class="load_card_img load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+			</div><div class="load_card_half">
+				<div class="load_card_img load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+			</div><div class="load_card_half">
+				<div class="load_card_img load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+			</div>
+		</div>
+	</div>
+</ng-template>

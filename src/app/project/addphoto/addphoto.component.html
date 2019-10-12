@@ -1,0 +1,64 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<mat-card class="add_photo_card">
+		<p class="main_quote">Choose a photo, which 600x360 of width and height respectively.</p>
+		<input class="file_hidden" #upfile name="upfile" type="file" id="inputUploader" (change)="fileChangeEvent($event)" accept="image/*" />
+		<button class="browse_btn" (click)="upfile.click()">Choose a image...<span>BROWSE</span></button>
+		<p class="note_quote">Only jpg, jpeg and png are allowed.</p>
+		<div class="img_crop_wrap" id="imgShowHide">
+			<image-cropper
+			    [imageChangedEvent]="imageChangedEvent"
+			    [maintainAspectRatio]="true"
+			    [aspectRatio]="5 / 3"
+			    [cropper] = "cropper"
+			    [cropperMinWidth] = "600"
+			    format="png"
+			    (imageCropped)="imageCropped($event)"
+			    (imageLoaded)="imageLoaded()"
+			    (cropperReady)="cropperReady()"
+			    (loadImageFailed)="loadImageFailed()"
+			></image-cropper>
+
+			<!-- <img name="img" [src]="croppedImage" /> -->
+
+			<input type="hidden" id="imgBlob" name="imgBlob">
+		</div>
+		<div id="loader" class="loader load_bg">&nbsp;</div>
+		<div class="btn_wrap">
+			<button (click)="submitFile()" id="upload_btn" mat-raised-button color="warn">Crop &amp; Upload</button>
+		</div>
+		<div class="error" *ngIf="idoEvErrMsg">{{idoEvErrMsg}}</div>
+	</mat-card>
+</div>
+<ng-template #desktop>
+	<div class="desktop_wrap">
+		<mat-card class="add_photo_card">
+			<p class="main_quote">Choose a photo, which 600x360 of width and height respectively.</p>
+			<input class="file_hidden" #upfile name="upfile" type="file" id="inputUploader" (change)="fileChangeEvent($event)" accept="image/*" />
+			<button class="browse_btn" (click)="upfile.click()">Choose a image...<span>BROWSE</span></button>
+			<p class="note_quote">Only jpg, jpeg and png are allowed.</p>
+			<div class="img_crop_wrap" id="imgShowHide">
+				<image-cropper
+				    [imageChangedEvent]="imageChangedEvent"
+				    [maintainAspectRatio]="true"
+				    [aspectRatio]="5 / 3"
+				    [cropper] = "cropper"
+				    [cropperMinWidth] = "600"
+				    format="png"
+				    (imageCropped)="imageCropped($event)"
+				    (imageLoaded)="imageLoaded()"
+				    (cropperReady)="cropperReady()"
+				    (loadImageFailed)="loadImageFailed()"
+				></image-cropper>
+
+				<!-- <img name="img" [src]="croppedImage" /> -->
+
+				<input type="hidden" id="imgBlob" name="imgBlob">
+			</div>
+			<div id="loader" class="loader load_bg">&nbsp;</div>
+			<div class="btn_wrap">
+				<button (click)="submitFile()" id="upload_btn" mat-raised-button color="warn">Crop &amp; Upload</button>
+			</div>
+			<div class="error" *ngIf="idoEvErrMsg">{{idoEvErrMsg}}</div>
+		</mat-card>
+	</div>
+</ng-template>

@@ -1,0 +1,87 @@
+.page_wrap {
+	margin: -16px 0 0;
+	padding: 0 16px;
+    position: relative;
+    z-index: 2;
+}
+.user_card {
+	margin-bottom: 30px;
+	overflow: hidden;
+	padding: 0;
+}
+.img_resp {
+	display: block;
+	width: 100%;
+}
+.user_img {
+	position: relative;
+}
+.add_photo_link {
+    background-color: #f05758;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 2;
+}
+.btn_wrap {
+	margin-bottom: 30px;
+	padding: 16px 0 0;
+}
+.btn_wrap .mat-raised-button {
+	background-color: #f05758;
+	font-weight: 600;
+	font-size: 12px;
+	height: 48px;
+    line-height: 48px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.btn_wrap .mat-raised-button[disabled] {
+	background-color:rgba(0,0,0,.12)
+}
+.mydetail_form {
+	display: block;
+	padding: 0 8px;
+}
+.mydetail_form .mat-form-field {
+	width: 100%;
+}
+.mydetail_form .mat-input-element {
+	height: 22px;
+	line-height: 22px;
+}
+.mydetail_form textarea.mat-input-element {
+	height: 66px;
+	line-height: 22px;
+	resize: none;
+}
+.question_wrap {
+	position: relative;
+}
+.question_wrap mat-icon {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 14px;
+	z-index: 2
+}
+.desktop_det {
+	max-width: 1000px;
+	margin: 30px auto;
+}
+.col_half40 {
+	float: left;
+	max-width: 392px;
+}
+.col_half60 {
+	float: left;
+	margin-left: 16px;
+	max-width: 592px;
+}
+.desktop_det .btn_wrap .mat-raised-button {
+    font-size: 14px;
+    font-weight: 400;
+}
+.desktop_det .btn_wrap.mb_0 {
+	margin-bottom: 0;
+}

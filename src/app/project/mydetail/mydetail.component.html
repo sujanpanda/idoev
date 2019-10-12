@@ -1,0 +1,170 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<mat-card class="user_card">
+	    <div class="user_img" *ngIf="userDetail.imgpath;else noimageAvail">
+	    	<a mat-fab class="add_photo_link" color="warn" routerLink="/addphoto">
+	    		<mat-icon>edit</mat-icon>
+	    	</a>
+        	<img class="img_resp"
+			[defaultImage]="defaultImage"
+        	[lazyLoad]="image"
+			alt="Image 1">
+	    </div>
+	    <ng-template #noimageAvail>
+		    <div class="user_img">
+		    	<a mat-fab class="add_photo_link" color="warn" routerLink="/addphoto">
+		    		<mat-icon>add</mat-icon>
+		    	</a>
+	        	<img class="img_resp"
+	        	[defaultImage]="defNoimage"
+        		[lazyLoad]="noimage"
+	        	alt="Image 1">
+		    </div>
+		</ng-template>
+	</mat-card>
+	<form action="#" class="mydetail_form" [formGroup]="updateForm" *ngIf="userDetail">
+		<mat-form-field>
+	    	<input type="text" id="my_name" autocomplete="off" matInput value="{{userDetail.name}}" placeholder="Name" name="name" #name formControlName="name">
+	    	<mat-error *ngIf="updform.name.errors?.required && updform.name.touched">
+				Please write your name.
+			</mat-error>
+			<mat-error *ngIf="updform.name.errors?.minlength && updform.name.touched; else notValid">
+				Name should be minimum 3 letters.
+			</mat-error>
+			<ng-template #notValid>
+				<mat-error *ngIf="updform.name.errors?.pattern && updform.name.touched">
+					Remove space before and after your name.
+				</mat-error>
+			</ng-template>
+	  	</mat-form-field>
+	  	<div class="question_wrap">
+	  		<mat-icon (click)="openSnackBar()">help</mat-icon>
+			<mat-form-field>
+		    	<input type="email" disabled="" readonly autocomplete="off" matInput value="{{userDetail.email}}" placeholder="Email">
+		  	</mat-form-field>
+	  	</div>
+		<mat-form-field>
+	    	<input type="tel" autocomplete="off" value="{{userDetail.mobile}}" matInput placeholder="Mobile" name="mobile" #mobile formControlName="mobile">
+			<mat-error *ngIf="updform.mobile.errors?.required && updform.mobile.touched ||
+			updform.mobile.errors?.minlength && updform.mobile.touched ||
+			updform.mobile.errors?.maxlength && updform.mobile.touched; else phNotVld">
+				Please enter your 10 digit Mobile Number.
+			</mat-error>
+			<ng-template #phNotVld>
+				<mat-error *ngIf="updform.mobile.errors?.pattern && updform.mobile.touched">
+					Please enter a valid Mobile Number.
+				</mat-error>
+			</ng-template>
+	  	</mat-form-field>
+		<mat-form-field>
+			<mat-label>City</mat-label>
+			<mat-select name="city" formControlName="city" #city>
+      			<mat-option *ngFor="let ct of ctDetail" value="{{ct[1]}}">{{ct[1]}}</mat-option>
+    		</mat-select>
+	    	<mat-error *ngIf="updform.city.errors?.required && updform.city.touched">
+				Please enter your City.
+			</mat-error>
+	  	</mat-form-field>
+		<mat-form-field>
+	    	<textarea matInput placeholder="Address" row="3" value="{{userDetail.address}}" name="address" formControlName="address" #address></textarea>
+	    	<mat-error *ngIf="updform.address.errors?.required && updform.address.touched">
+				Please enter your Address.
+			</mat-error>
+	  	</mat-form-field>
+	  	<div class="btn_wrap">
+			<button disabled="" id="updatebtn" (click)="updateUser()" mat-raised-button color="warn">Update</button>
+		</div>
+		<div class="server_valid_box" *ngIf="updateErrMsg">
+	        <mat-error class="server_valid" *ngFor="let errMsg of updateErrMsg">{{ errMsg.msg }}</mat-error>
+	    </div>
+	</form>
+</div>
+<ng-template #desktop>
+	<div class="desktop_det">
+		<div class="custom_clearfix row_wrap">
+			<div class="col_half40">
+				<mat-card class="user_card">
+				    <div class="user_img" *ngIf="userDetail.imgpath;else noimageAvail">
+				    	<a mat-fab class="add_photo_link" color="warn" routerLink="/addphoto">
+				    		<mat-icon>edit</mat-icon>
+				    	</a>
+			        	<img class="img_resp"
+						[defaultImage]="defaultImage"
+			        	[lazyLoad]="image"
+						alt="Image 1">
+				    </div>
+				    <ng-template #noimageAvail>
+					    <div class="user_img">
+					    	<a mat-fab class="add_photo_link" color="warn" routerLink="/addphoto">
+					    		<mat-icon>add</mat-icon>
+					    	</a>
+				        	<img class="img_resp"
+				        	[defaultImage]="defNoimage"
+			        		[lazyLoad]="noimage"
+				        	alt="Image 1">
+					    </div>
+					</ng-template>
+				</mat-card>
+			</div>
+			<div class="col_half60">
+				<mat-card>
+					<form action="#" class="mydetail_form" [formGroup]="updateForm" *ngIf="userDetail">
+						<mat-form-field>
+					    	<input type="text" id="my_name" autocomplete="off" matInput value="{{userDetail.name}}" placeholder="Name" name="name" #name formControlName="name">
+					    	<mat-error *ngIf="updform.name.errors?.required && updform.name.touched">
+								Please write your name.
+							</mat-error>
+							<mat-error *ngIf="updform.name.errors?.minlength && updform.name.touched; else notValid">
+								Name should be minimum 3 letters.
+							</mat-error>
+							<ng-template #notValid>
+								<mat-error *ngIf="updform.name.errors?.pattern && updform.name.touched">
+									Remove space before and after your name.
+								</mat-error>
+							</ng-template>
+					  	</mat-form-field>
+					  	<div class="question_wrap">
+					  		<mat-icon (click)="openSnackBar()">help</mat-icon>
+							<mat-form-field>
+						    	<input type="email" disabled="" readonly autocomplete="off" matInput value="{{userDetail.email}}" placeholder="Email">
+						  	</mat-form-field>
+					  	</div>
+						<mat-form-field>
+					    	<input type="tel" autocomplete="off" value="{{userDetail.mobile}}" matInput placeholder="Mobile" name="mobile" #mobile formControlName="mobile">
+							<mat-error *ngIf="updform.mobile.errors?.required && updform.mobile.touched ||
+							updform.mobile.errors?.minlength && updform.mobile.touched ||
+							updform.mobile.errors?.maxlength && updform.mobile.touched; else phNotVld">
+								Please enter your 10 digit Mobile Number.
+							</mat-error>
+							<ng-template #phNotVld>
+								<mat-error *ngIf="updform.mobile.errors?.pattern && updform.mobile.touched">
+									Please enter a valid Mobile Number.
+								</mat-error>
+							</ng-template>
+					  	</mat-form-field>
+						<mat-form-field>
+							<mat-label>City</mat-label>
+							<mat-select name="city" formControlName="city" #city>
+				      			<mat-option *ngFor="let ct of ctDetail" value="{{ct[1]}}">{{ct[1]}}</mat-option>
+				    		</mat-select>
+					    	<mat-error *ngIf="updform.city.errors?.required && updform.city.touched">
+								Please enter your City.
+							</mat-error>
+					  	</mat-form-field>
+						<mat-form-field>
+					    	<textarea matInput placeholder="Address" row="3" value="{{userDetail.address}}" name="address" formControlName="address" #address></textarea>
+					    	<mat-error *ngIf="updform.address.errors?.required && updform.address.touched">
+								Please enter your Address.
+							</mat-error>
+					  	</mat-form-field>
+					  	<div class="btn_wrap mb_0">
+							<button disabled="" id="updatebtn" (click)="updateUser()" mat-raised-button color="warn">Update</button>
+						</div>
+						<div class="server_valid_box" *ngIf="updateErrMsg">
+					        <mat-error class="server_valid" *ngFor="let errMsg of updateErrMsg">{{ errMsg.msg }}</mat-error>
+					    </div>
+					</form>
+				</mat-card>
+			</div>
+		</div>
+	</div>
+</ng-template>

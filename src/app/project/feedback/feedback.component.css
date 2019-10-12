@@ -1,0 +1,44 @@
+.page_wrap {
+    padding: 0 16px;
+    margin: -16px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.feedback_form mat-form-field {
+	width: 100%;
+}
+.feedback_form textarea.mat-input-element {
+	height: 66px;
+	line-height: 22px;
+	resize: none;
+}
+.btn_wrap {
+	padding: 6px 0 0;
+}
+.btn_wrap .mat-raised-button {
+	background-color: #f05758;
+	font-weight: 600;
+	font-size: 12px;
+	height: 48px;
+    line-height: 48px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.feedback_card {
+	margin-bottom: 30px;
+}
+.feedback_form input {
+    height: 22px;
+    line-height: 22px;
+}
+.btn_wrap .mat-raised-button[disabled] {
+	background-color:rgba(0,0,0,.12)
+}
+.desktop_wrap .btn_wrap .mat-raised-button {
+    font-size: 14px;
+    font-weight: 400;
+}
+.desktop_wrap {
+	margin: 30px auto 0;
+	max-width: 1000px;
+}

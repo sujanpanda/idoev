@@ -1,0 +1,374 @@
+<div *ngIf="mobView; else desktopHome">
+	<div class="page_wrap">
+		<div class="swiper_card">
+			<mat-card>
+			  	<div class="swiper-container main_banner">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide">
+				        	<img class="img_resp" src="/assets/images/gallery/mobile_1.jpg" alt="Image 1">
+				        </div>
+				        <div class="swiper-slide">
+				        	<img class="img_resp" src="/assets/images/gallery/mobile_2.jpg" alt="Image 2">
+				        </div>
+				        <div class="swiper-slide">
+				        	<img class="img_resp" src="/assets/images/gallery/mobile_3.jpg" alt="Image 3">
+				        </div>
+				        <div class="swiper-slide">
+				        	<img class="img_resp" src="/assets/images/gallery/mobile_4.jpg" alt="Image 4">
+				        </div>
+				        <div class="swiper-slide">
+				        	<img class="img_resp" src="/assets/images/gallery/mobile_5.jpg" alt="Image 5">
+				        </div>
+				    </div>
+				    <!-- If we need pagination -->
+				    <div class="swiper-pagination"></div>
+				</div>
+			</mat-card>
+			<div class="btn_wrap">
+				<a routerLink="/venues" mat-raised-button color="warn">Book an Event</a>
+			</div>
+		</div>
+		<h3 class="page_heading_1">What to expect?</h3>
+		<div class="card_list_wrap custom_clearfix">
+			<div class="card_list">
+				<a class="card_link" routerLink="/venuedetail/1">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<p class="sub_card_head">One great night</p>
+					    	<p class="sub_card_head2">Lorem Ipsum</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+			<div class="card_list">
+				<a class="card_link" routerLink="/venuedetail/2">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<p class="sub_card_head">Great venues</p>
+					    	<p class="sub_card_head2">Lorem Ipsum</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+			<div class="card_list">
+				<a class="card_link" routerLink="/venuedetail/3">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<p class="sub_card_head">Food and drinks</p>
+					    	<p class="sub_card_head2">Lorem Ipsum</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+			<div class="card_list">
+				<a class="card_link" routerLink="/venuedetail/4">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<p class="sub_card_head">Accommodation</p>
+					    	<p class="sub_card_head2">Lorem Ipsum</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+		</div>
+		<h3 class="page_heading_1">THE REASON WE ARE 'THE' EVENT PLANNERS TO WORK WITH</h3>
+		<div class="event_planner_wrap">
+			<div class="event_planner_list">
+				<span class="event_img">
+					<img src="https://img.icons8.com/color/48/000000/for-experienced.png">
+				</span>
+				<p class="event_quote1">Experience and Expertise</p>
+				<p class="event_quote2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+			</div>
+		</div>
+		<div class="event_planner_wrap">
+			<div class="event_planner_list">
+				<span class="event_img">
+					<img src="https://img.icons8.com/color/48/000000/for-experienced.png">
+				</span>
+				<p class="event_quote1">Experience and Expertise</p>
+				<p class="event_quote2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+			</div>
+		</div>
+		<div class="event_planner_wrap">
+			<div class="event_planner_list">
+				<span class="event_img">
+					<img src="https://img.icons8.com/color/48/000000/for-experienced.png">
+				</span>
+				<p class="event_quote1">Experience and Expertise</p>
+				<p class="event_quote2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+			</div>
+		</div>
+		<div class="event_planner_wrap">
+			<div class="event_planner_list">
+				<span class="event_img">
+					<img src="https://img.icons8.com/color/48/000000/for-experienced.png">
+				</span>
+				<p class="event_quote1">Experience and Expertise</p>
+				<p class="event_quote2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+			</div>
+		</div>
+		<div style="height:10px;">&nbsp;</div>
+		<h3 class="page_heading_1">LATEST EVENTS</h3>
+		<div class="latest_work_wrap">
+			<div class="swiper-container work_slide">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 1</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 2</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 3</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 4</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 5</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			    </div>
+			    <!-- If we need pagination -->
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<ng-template #desktopHome>
+	<div class="desk_swiper">
+	  	<div class="swiper-container desk_banner">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+		        	<img class="img_resp" src="/assets/images/gallery/desk_3.jpg" alt="Image 3">
+		        </div>
+		        <div class="swiper-slide">
+		        	<img class="img_resp" src="/assets/images/gallery/desk_4.jpg" alt="Image 4">
+		        </div>
+		        <div class="swiper-slide">
+		        	<img class="img_resp" src="/assets/images/gallery/desk_1.jpg" alt="Image 1">
+		        </div>
+		        <div class="swiper-slide">
+		        	<img class="img_resp" src="/assets/images/gallery/desk_2.jpg" alt="Image 2">
+		        </div>
+		    </div>
+		    <!-- If we need pagination -->
+		    <div class="swiper-pagination"></div>
+		    <div class="swiper-button-prev"></div>
+    		<div class="swiper-button-next"></div>
+		</div>
+		<div class="btn_wrap desk_btn">
+			<a routerLink="/venues" mat-raised-button color="warn">Book an Event</a>
+		</div>
+	</div>
+	<div class="desk_card_wrap">
+		<h3 class="page_heading_1">What to expect?</h3>
+		<div class="card_list_wrap custom_clearfix">
+			<div class="card_list">
+				<a class="card_link" routerLink="/venuedetail/1">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<p class="sub_card_head">One great night</p>
+					    	<p class="sub_card_head2">Lorem Ipsum</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+			<div class="card_list">
+				<a class="card_link" routerLink="/venuedetail/2">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<p class="sub_card_head">Great venues</p>
+					    	<p class="sub_card_head2">Lorem Ipsum</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+			<div class="card_list">
+				<a class="card_link" routerLink="/venuedetail/3">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<p class="sub_card_head">Food and drinks</p>
+					    	<p class="sub_card_head2">Lorem Ipsum</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+			<div class="card_list">
+				<a class="card_link" routerLink="/venuedetail/4">
+					<mat-card>
+						<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+					    	<p class="sub_card_head">Accommodation</p>
+					    	<p class="sub_card_head2">Lorem Ipsum</p>
+					  	</mat-card-content>
+					</mat-card>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="desk_card_wrap">
+		<h3 class="page_heading_1">THE REASON WE ARE 'THE' EVENT PLANNERS TO WORK WITH</h3>
+		<div class="custom_clearfix">
+			<div class="event_planner_wrap">
+				<div class="event_planner_list">
+					<div class="custom_clearfix mb_x">
+						<span class="event_img">
+							<img src="https://img.icons8.com/color/48/000000/for-experienced.png">
+						</span>
+						<p class="event_quote1">Experience and Expertise</p>
+					</div>
+					<p class="event_quote2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+				</div>
+			</div>
+			<div class="event_planner_wrap">
+				<div class="event_planner_list">
+					<div class="custom_clearfix mb_x">
+						<span class="event_img">
+							<img src="https://img.icons8.com/color/48/000000/for-experienced.png">
+						</span>
+						<p class="event_quote1">Experience and Expertise</p>
+					</div>
+					<p class="event_quote2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+				</div>
+			</div>
+			<div class="event_planner_wrap">
+				<div class="event_planner_list">
+					<div class="custom_clearfix mb_x">
+						<span class="event_img">
+							<img src="https://img.icons8.com/color/48/000000/for-experienced.png">
+						</span>
+						<p class="event_quote1">Experience and Expertise</p>
+					</div>
+					<p class="event_quote2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+				</div>
+			</div>
+			<div class="event_planner_wrap">
+				<div class="event_planner_list">
+					<div class="custom_clearfix mb_x">
+						<span class="event_img">
+							<img src="https://img.icons8.com/color/48/000000/for-experienced.png">
+						</span>
+						<p class="event_quote1">Experience and Expertise</p>
+					</div>
+					<p class="event_quote2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="desk_card_wrap">
+		<h3 class="page_heading_1">LATEST EVENTS</h3>
+		<div class="latest_work_wrap">
+			<div class="swiper-container work_slide">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 1</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 2</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 3</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 4</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="wrk_card_wrap">
+			        		<mat-card>
+								<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+								<mat-card-content>
+							    	<p class="sub_card_head">Work 5</p>
+							    	<p class="sub_card_head2">John Doe</p>
+							  	</mat-card-content>
+							</mat-card>
+			        	</div>
+			        </div>
+			    </div>
+			    <!-- If we need pagination -->
+			    <div class="swiper-pagination"></div>
+			    <div class="swiper-button-prev"></div>
+    			<div class="swiper-button-next"></div>
+			</div>
+		</div>
+	</div>
+</ng-template>

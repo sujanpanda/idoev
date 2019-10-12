@@ -1,0 +1,292 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<mat-card class="venue_card">
+		<div class="venue_image">
+			<img src="/assets/images/gallery/mobile_1.jpg">
+		</div>
+	</mat-card>
+	<form class="form_wrap" [formGroup]="idoEvForm">
+		<mat-form-field>
+	    	<mat-select placeholder="Event type" name="venuetype" #venuetype formControlName="venuetype">
+	      		<mat-option *ngFor="let evType of eventType" value="{{evType | titlecase}}">{{evType | titlecase}}</mat-option>
+	    	</mat-select>
+	    	<mat-error *ngIf="ideform.venuetype.errors?.required && ideform.venuetype.touched">
+				Please select venue type.
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field>
+	    	<input type="number" autocomplete="off" name="guest" #guest formControlName="guest" matInput placeholder="Number of guests" (ngModelChange)="guestNumber($event)">
+	    	<mat-error *ngIf="ideform.guest.errors?.required && ideform.guest.touched">
+				Please type number of guest.
+			</mat-error>
+	    	<mat-error *ngIf="ideform.guest.errors?.pattern && ideform.guest.touched">
+				Please enter valid number.
+			</mat-error>
+	    	<mat-error *ngIf="ideform.guest.errors?.min && ideform.guest.touched">
+				Please enter minimum 1 guest.
+			</mat-error>
+	  	</mat-form-field>
+	  	<div class="calendar_wrap">
+			<mat-form-field	>
+			  	<mat-label>Date for booking</mat-label>
+			  	<input (click)="picker.open()" [matDatepickerFilter]="dtFilter" [min]="todaydate" name="date" #date formControlName="date" autocomplete="off" matInput [matDatepicker]="picker">
+			  	<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+			  	<mat-datepicker touchUi #picker color="warn"></mat-datepicker>
+			  	<mat-error *ngIf="ideform.date.errors?.required && ideform.date.touched">
+					Please enter your booking date.
+				</mat-error>
+			</mat-form-field>
+	  	</div>
+	  	<div class="timepick_wrap">
+	  		<mat-form-field>
+	  			<mat-label>Time for booking</mat-label>
+  				<input (click)="myTimeSelect.open()" autocomplete="off" matInput [matTimeSelect]="myTimeSelect" name="stime" #stime formControlName="stime">
+  				<mat-time-select-toggle matSuffix [for]="myTimeSelect"></mat-time-select-toggle>
+  				<mat-time-select #myTimeSelect color="warn"></mat-time-select>
+  				<mat-error *ngIf="ideform.stime.errors?.required && ideform.stime.touched">
+					Require booking time.
+				</mat-error>
+			</mat-form-field>
+	  	</div>
+	  	<mat-form-field>
+	    	<input type="number" autocomplete="off" name="hours" #hours formControlName="hours" matInput placeholder="Hours to spend">
+	    	<mat-error *ngIf="ideform.hours.errors?.required && ideform.hours.touched">
+				Please enter hours to spend.
+			</mat-error>
+	  	</mat-form-field>
+	  	<mat-form-field>
+	    	<mat-select placeholder="City" *ngIf="venueDet" name="cityshow" #cityshow formControlName="cityshow">
+	      		<mat-option value="{{venueDet.city}}">{{venueDet.city}}</mat-option>
+	    	</mat-select>
+	  	</mat-form-field>
+	  	<mat-form-field>
+	    	<mat-select placeholder="Vunue" *ngIf="venueDet" name="venueshow" #venueshow formControlName="venueshow">
+	      		<mat-option value="{{venueDet.name}}">{{venueDet.name}}</mat-option>
+	    	</mat-select>
+	  	</mat-form-field>
+	  	<label class="page_label">Others(optional)</label>
+	  	<mat-form-field>
+	    	<mat-select placeholder="Equipments" name="equip" #equip formControlName="equip" multiple (ngModelChange)="callEquip($event)">
+	      		<mat-option value="dj">DJ</mat-option>
+	      		<mat-option value="mike">Mike</mat-option>
+	      		<mat-option value="projector">Projector</mat-option>
+	    	</mat-select>
+		</mat-form-field>
+	  	<mat-form-field>
+	    	<mat-select placeholder="Food" name="food" #food formControlName="food" multiple (ngModelChange)="callFood($event)">
+	      		<mat-option value="breakfast">Breakfast</mat-option>
+	      		<mat-option value="lunch">Lunch</mat-option>
+	      		<mat-option value="dinner">Dinner</mat-option>
+	      		<mat-option value="snacks">Snacks</mat-option>
+	      		<mat-option value="teabev">Tea &amp; beverages </mat-option>
+	    	</mat-select>
+		</mat-form-field>
+		<mat-form-field>
+	    	<mat-select placeholder="Food Type" name="foodtype" #foodtype formControlName="foodtype"(ngModelChange)="foodType($event)">
+	      		<mat-option value="normal">Normal</mat-option>
+	      		<mat-option value="semi">Semi delux</mat-option>
+	      		<mat-option value="delux">Delux</mat-option>
+	    	</mat-select>
+		</mat-form-field>
+		<div class="radio_wrap">
+			<mat-radio-group name="foodgan" #foodgan formControlName="foodgan" (ngModelChange)="radioChange($event)">
+			  	<mat-radio-button value="veg" color="warn">Only veg</mat-radio-button>&nbsp;&nbsp;&nbsp;&nbsp;
+			  	<mat-radio-button value="nonveg" color="warn">Veg &amp; non-veg</mat-radio-button>
+			</mat-radio-group>
+		</div>
+		<div class="decoration_wrap">
+			<label class="page_label">Decoration(optional)</label>
+			<mat-form-field>
+		    	<mat-select placeholder="Lighting" name="lighting" #lighting formControlName="lighting" (ngModelChange)="lightChange($event)">
+		      		<mat-option value="normal">Normal</mat-option>
+		      		<mat-option value="semi">Semi delux</mat-option>
+		      		<mat-option value="delux">Delux</mat-option>
+		    	</mat-select>
+			</mat-form-field>
+			<mat-form-field>
+		    	<mat-select placeholder="Flowers" name="flowers" #flowers formControlName="flowers" (ngModelChange)="flowerChange($event)">
+		      		<mat-option value="normal">Normal</mat-option>
+		      		<mat-option value="semi">Semi delux</mat-option>
+		      		<mat-option value="delux">Delux</mat-option>
+		    	</mat-select>
+			</mat-form-field>
+			<mat-form-field>
+		    	<mat-select placeholder="Seating" name="seating" #seating formControlName="seating" (ngModelChange)="seatChange($event)">
+		      		<mat-option value="normal">Normal</mat-option>
+		      		<mat-option value="semi">Semi delux</mat-option>
+		      		<mat-option value="delux">Delux</mat-option>
+		    	</mat-select>
+			</mat-form-field>
+		</div>
+		<p class="price_quote">Your total cost&nbsp;&nbsp;&nbsp;<span class="total_price">&#8377;<span *ngIf="totalPrice">{{totalPrice}}</span>.00</span></p>
+		<div class="btn_wrap">
+			<button id="pay_btn" (click)="bookEvent()" mat-raised-button color="warn">PROCEED TO PAYMENT</button>
+		</div>
+	</form>
+</div>
+<ng-template #desktop>
+	<div class="desk_book_wrap">
+		<mat-card class="venue_card">
+			<div class="venue_image">
+				<img src="/assets/images/gallery/mobile_1.jpg">
+			</div>
+		</mat-card>
+		<form class="form_wrap" [formGroup]="idoEvForm">
+			<div class="custom_clearfix">
+				<div class="desk_form_contr">
+					<mat-form-field>
+				    	<mat-select placeholder="Event type" name="venuetype" #venuetype formControlName="venuetype">
+				      		<mat-option *ngFor="let evType of eventType" value="{{evType | titlecase}}">{{evType | titlecase}}</mat-option>
+				    	</mat-select>
+				    	<mat-error *ngIf="ideform.venuetype.errors?.required && ideform.venuetype.touched">
+							Please select venue type.
+						</mat-error>
+					</mat-form-field>
+				</div>
+				<div class="desk_form_contr">
+					<mat-form-field>
+				    	<input type="number" autocomplete="off" name="guest" #guest formControlName="guest" matInput placeholder="Number of guests" (ngModelChange)="guestNumber($event)">
+				    	<mat-error *ngIf="ideform.guest.errors?.required && ideform.guest.touched">
+							Please type number of guest.
+						</mat-error>
+				    	<mat-error *ngIf="ideform.guest.errors?.pattern && ideform.guest.touched">
+							Please enter valid number.
+						</mat-error>
+				    	<mat-error *ngIf="ideform.guest.errors?.min && ideform.guest.touched">
+							Please enter minimum 1 guest.
+						</mat-error>
+				  	</mat-form-field>
+			  	</div>
+				<div class="desk_form_contr">
+				  	<div class="calendar_wrap">
+						<mat-form-field	>
+						  	<mat-label>Date for booking</mat-label>
+						  	<input (click)="picker.open()" [matDatepickerFilter]="dtFilter" [min]="todaydate" name="date" #date formControlName="date" autocomplete="off" matInput [matDatepicker]="picker">
+						  	<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+						  	<mat-datepicker touchUi #picker color="warn"></mat-datepicker>
+						  	<mat-error *ngIf="ideform.date.errors?.required && ideform.date.touched">
+								Please enter your booking date.
+							</mat-error>
+						</mat-form-field>
+				  	</div>
+			  	</div>
+				<div class="desk_form_contr">
+				  	<div class="timepick_wrap">
+				  		<mat-form-field>
+				  			<mat-label>Time for booking</mat-label>
+			  				<input (click)="myTimeSelect.open()" autocomplete="off" matInput [matTimeSelect]="myTimeSelect" name="stime" #stime formControlName="stime">
+			  				<mat-time-select-toggle matSuffix [for]="myTimeSelect"></mat-time-select-toggle>
+			  				<mat-time-select #myTimeSelect color="warn"></mat-time-select>
+			  				<mat-error *ngIf="ideform.stime.errors?.required && ideform.stime.touched">
+								Require booking time.
+							</mat-error>
+						</mat-form-field>
+				  	</div>
+			  	</div>
+				<div class="desk_form_contr">
+				  	<mat-form-field>
+				    	<input type="number" autocomplete="off" name="hours" #hours formControlName="hours" matInput placeholder="Hours to spend">
+				    	<mat-error *ngIf="ideform.hours.errors?.required && ideform.hours.touched">
+							Please enter hours to spend.
+						</mat-error>
+				  	</mat-form-field>
+			  	</div>
+				<div class="desk_form_contr">
+				  	<mat-form-field>
+				    	<mat-select placeholder="City" *ngIf="venueDet" name="cityshow" #cityshow formControlName="cityshow">
+				      		<mat-option value="{{venueDet.city}}">{{venueDet.city}}</mat-option>
+				    	</mat-select>
+				  	</mat-form-field>
+			  	</div>
+				<div class="desk_form_contr">
+				  	<mat-form-field>
+				    	<mat-select placeholder="Vunue" *ngIf="venueDet" name="venueshow" #venueshow formControlName="venueshow">
+				      		<mat-option value="{{venueDet.name}}">{{venueDet.name}}</mat-option>
+				    	</mat-select>
+				  	</mat-form-field>
+			  	</div>
+		  	</div>
+		  	<label class="page_label">Others(optional)</label>
+		  	<div class="custom_clearfix">
+		  		<div class="desk_form_contr">
+				  	<mat-form-field>
+				    	<mat-select placeholder="Equipments" name="equip" #equip formControlName="equip" multiple (ngModelChange)="callEquip($event)">
+				      		<mat-option value="dj">DJ</mat-option>
+				      		<mat-option value="mike">Mike</mat-option>
+				      		<mat-option value="projector">Projector</mat-option>
+				    	</mat-select>
+					</mat-form-field>
+				</div>
+				<div class="desk_form_contr">
+				  	<mat-form-field>
+				    	<mat-select placeholder="Food" name="food" #food formControlName="food" multiple (ngModelChange)="callFood($event)">
+				      		<mat-option value="breakfast">Breakfast</mat-option>
+				      		<mat-option value="lunch">Lunch</mat-option>
+				      		<mat-option value="dinner">Dinner</mat-option>
+				      		<mat-option value="snacks">Snacks</mat-option>
+				      		<mat-option value="teabev">Tea &amp; beverages </mat-option>
+				    	</mat-select>
+					</mat-form-field>
+				</div>
+				<div class="desk_form_contr">
+					<mat-form-field>
+				    	<mat-select placeholder="Food Type" name="foodtype" #foodtype formControlName="foodtype"(ngModelChange)="foodType($event)">
+				      		<mat-option value="normal">Normal</mat-option>
+				      		<mat-option value="semi">Semi delux</mat-option>
+				      		<mat-option value="delux">Delux</mat-option>
+				    	</mat-select>
+					</mat-form-field>
+				</div>
+				<div class="desk_form_contr">
+					<div class="radio_wrap">
+						<mat-radio-group name="foodgan" #foodgan formControlName="foodgan" (ngModelChange)="radioChange($event)">
+						  	<mat-radio-button value="veg" color="warn">Only veg</mat-radio-button>&nbsp;&nbsp;&nbsp;&nbsp;
+						  	<mat-radio-button value="nonveg" color="warn">Veg &amp; non-veg</mat-radio-button>
+						</mat-radio-group>
+					</div>
+				</div>
+			</div>
+			<label class="page_label">Decoration(optional)</label>
+			<div class="custom_clearfix">
+				<div class="decoration_wrap">
+					<div class="desk_form_contr">
+						<mat-form-field>
+					    	<mat-select placeholder="Lighting" name="lighting" #lighting formControlName="lighting" (ngModelChange)="lightChange($event)">
+					      		<mat-option value="normal">Normal</mat-option>
+					      		<mat-option value="semi">Semi delux</mat-option>
+					      		<mat-option value="delux">Delux</mat-option>
+					    	</mat-select>
+						</mat-form-field>
+					</div>
+					<div class="desk_form_contr">
+						<mat-form-field>
+					    	<mat-select placeholder="Flowers" name="flowers" #flowers formControlName="flowers" (ngModelChange)="flowerChange($event)">
+					      		<mat-option value="normal">Normal</mat-option>
+					      		<mat-option value="semi">Semi delux</mat-option>
+					      		<mat-option value="delux">Delux</mat-option>
+					    	</mat-select>
+						</mat-form-field>
+					</div>
+					<div class="desk_form_contr">
+						<mat-form-field>
+					    	<mat-select placeholder="Seating" name="seating" #seating formControlName="seating" (ngModelChange)="seatChange($event)">
+					      		<mat-option value="normal">Normal</mat-option>
+					      		<mat-option value="semi">Semi delux</mat-option>
+					      		<mat-option value="delux">Delux</mat-option>
+					    	</mat-select>
+						</mat-form-field>
+					</div>
+				</div>
+			</div>
+			<div class="custom_clearfix">
+				<div class="desk_form_contr">
+					<p class="price_quote">Your total cost&nbsp;&nbsp;&nbsp;<span class="total_price">&#8377;<span *ngIf="totalPrice">{{totalPrice}}</span>.00</span></p>
+				</div>
+				<div class="desk_form_contr">
+					<div class="btn_wrap">
+						<button id="pay_btn" (click)="bookEvent()" mat-raised-button color="warn">PROCEED TO PAYMENT</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</ng-template>

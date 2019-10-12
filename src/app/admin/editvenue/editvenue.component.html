@@ -1,0 +1,11 @@
+<div class="main_dashboard">
+	<h2>Edit Venue Details.</h2>
+	<div class="venue_list" *ngFor="let venlist of venuList">
+		<span class="venue_name">{{venlist.name}}</span>
+		<span class="venue_city">{{venlist.city}}</span>
+		<a routerLink="/idostar/editvenuedetail/{{venlist._id}}" class="edit_venue">Edit</a>
+		<a routerLink="/idostar/editcalc/{{venlist.id}}" class="edit_venue">Edit Calculation</a>
+		<a routerLink="/idostar/venuephoto/{{venlist._id}}" class="edit_venue">Edit Image</a>
+		<a routerLink="/idostar/ownerphoto/{{venlist._id}}" class="edit_venue">Edit Owner Image</a>
+	</div>
+</div>

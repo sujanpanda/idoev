@@ -1,0 +1,76 @@
+<div class="mobile_foot" *ngIf="mobView; else desktop">
+	<div class="footer_wrap">
+		<a class="footer_icon icon_fb" href="https://www.facebook.com/" target="_blank">
+			<img src="/assets/images/facebook.svg"  alt="facebook">
+		</a>
+		<a class="footer_icon icon_tt" href="https://twitter.com/" target="_blank">
+			<img src="/assets/images/twitter.svg" alt="twitter">
+		</a>
+		<a class="footer_icon icon_gp" href="https://aboutme.google.com/u/0/?referer=gplus" target="_blank">
+			<img src="/assets/images/gplus.svg" alt="google +">
+		</a>
+	</div>
+	<div class="mobile_footer">
+		<div class="desk_foot">
+			<ul class="footer_list">
+				<li>
+					<a routerLink="/" (click)="footLink()">Home</a>
+				</li>
+				<li>
+					<a routerLink="/about" (click)="footLink()">About Us</a>
+				</li>
+				<li>
+					<a routerLink="/contact" (click)="footLink()">Contact Us</a>
+				</li>
+				<li>
+					<a routerLink="/givefeedback" (click)="footLink()">Give us Feedback</a>
+				</li>
+				<li>
+					<a routerLink="/faq" (click)="footLink()">FAQ</a>
+				</li>
+				<li>
+					<a routerLink="/reportmissing" (click)="footLink()">Report Missing</a>
+				</li>
+			</ul>
+			<p class="footer_para">&copy; 2019 <a routerLink="/" (click)="footLink()">iDoEvent</a>. All rights reserved.</p>
+		</div>
+	</div>
+</div>
+<ng-template #desktop>
+	<div class="footer_wrap">
+		<a class="footer_icon icon_fb" href="https://www.facebook.com/" target="_blank">
+			<img src="/assets/images/facebook.svg"  alt="facebook">
+		</a>
+		<a class="footer_icon icon_tt" href="https://twitter.com/" target="_blank">
+			<img src="/assets/images/twitter.svg" alt="twitter">
+		</a>
+		<a class="footer_icon icon_gp" href="https://aboutme.google.com/u/0/?referer=gplus" target="_blank">
+			<img src="/assets/images/gplus.svg" alt="google +">
+		</a>
+	</div>
+	<div class="desktop_footer">
+		<div class="desk_foot">
+			<ul class="footer_list">
+				<li>
+					<a routerLink="/" (click)="footLink()">Home</a>
+				</li>
+				<li>
+					<a routerLink="/about" (click)="footLink()">About Us</a>
+				</li>
+				<li>
+					<a routerLink="/contact" (click)="footLink()">Contact Us</a>
+				</li>
+				<li>
+					<a routerLink="/givefeedback" (click)="footLink()">Give us Feedback</a>
+				</li>
+				<li>
+					<a routerLink="/faq" (click)="footLink()">FAQ</a>
+				</li>
+				<li>
+					<a routerLink="/reportmissing" (click)="footLink()">Report Missing</a>
+				</li>
+			</ul>
+			<p class="footer_para">&copy; 2019 <a routerLink="/" (click)="footLink()">iDoEvent</a>. All rights reserved.</p>
+		</div>
+	</div>
+</ng-template>

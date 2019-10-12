@@ -1,0 +1,624 @@
+<div [ngClass]="{'mobile': showDesk}">
+	<app-header></app-header>
+	<div *ngIf="showDesk; else desktopSite">
+		<div class="page_load_wrap" *ngIf="showHome">
+			<div class="load_top_card load_bg"></div>
+			<div class="hgt_16"></div>
+			<div class="load_card_btn load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_16"></div>
+			<div class="load_card_list">
+				<div class="load_card_half">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div><div class="load_card_half">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div>
+			</div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap" *ngIf="showReport">
+			<div class="load_card_normal">
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_btn load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap" *ngIf="showFeed">
+			<div class="load_card_normal">
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_btn load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap" *ngIf="showFaq">
+			<div class="load_card_normal">
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+			</div>
+			<div class="hgt_16"></div>
+			<div class="load_card_normal">
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap" *ngIf="showVenues">
+			<div class="load_card_normal">
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_btn load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_16"></div>
+			<div class="load_card_list">
+				<div class="load_card_half">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div><div class="load_card_half">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap" *ngIf="showAbout">
+			<div class="load_top_card load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap no_margin" *ngIf="showLogin">
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_btn load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap no_margin" *ngIf="showReg">
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_btn load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap no_margin" *ngIf="showContact">
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_btn load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap" *ngIf="showDashboard">
+			<div class="load_top_card load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_text_half load_bg"></div>
+			<div class="hgt_10"></div>
+			<div class="load_card_btn load_bg"></div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="page_load_wrap" *ngIf="showOther">
+			<div class="load_card_normal">
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_top_card load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_btn load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+	</div>
+	<ng-template #desktopSite>
+		<div class="desk_load_wrap" *ngIf="showHome">
+			<div class="desk_banner load_bg"></div>
+			<div class="desk_wrapper">
+				<div class="load_head_txt load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="square_4_wrap custom_clearfix">
+					<div class="load_card_img load_bg"></div>
+					<div class="load_card_img load_bg"></div>
+					<div class="load_card_img load_bg"></div>
+					<div class="load_card_img load_bg"></div>
+				</div>
+				<div class="hgt_30"></div>
+				<div class="load_head_txt load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="custom_clearfix">
+					<div class="txt_half_wrap">
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div>
+					<div class="txt_half_wrap">
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div>
+				</div>
+				<div class="hgt_30"></div>
+			</div>
+		</div>
+		<div class="desk_load_wrap2" *ngIf="showLogin">
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_btn load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+		</div>
+		<div class="desk_load_wrap2" *ngIf="showReg">
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_btn load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_text load_bg"></div>
+		</div>
+		<div class="desk_wrapper" *ngIf="showAbout">
+			<div class="abt_card_wrap">
+				<div class="about_card load_bg"></div>
+				<div class="abt_card_txt_wr">
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div>
+			</div>
+			<div class="hgt_30"></div>
+			<div class="abt_card_wrap">
+				<div class="abt_card_txt_wr">
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div>
+				<div class="about_card load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+			<div class="abt_card_wrap">
+				<div class="about_card load_bg"></div>
+				<div class="abt_card_txt_wr">
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="desk_load_wrap2" *ngIf="showContact">
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_input load_bg"></div>
+			<div class="hgt_30"></div>
+			<div class="load_card_btn load_bg"></div>
+		</div>
+		<div class="desk_page_wrap custom_clearfix" *ngIf="showVenues">
+			<div class="load_card_normal">
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_btn load_bg"></div>
+			</div>
+			<div class="venu_list_desk">
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_card_list_half">
+					<div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div>
+				</div>
+				<div class="load_card_list_half">
+					<div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div>
+				</div>
+				<div class="load_card_list_half">
+					<div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div><div class="load_card_half">
+						<div class="load_card_img load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text load_bg"></div>
+						<div class="hgt_10"></div>
+						<div class="load_text_half load_bg"></div>
+					</div>
+				</div>
+				<div class="hgt_30"></div>
+			</div>
+		</div>
+		<div class="dashboard_load" *ngIf="showDashboard">
+			<div class="custom_clearfix">
+				<div class="left_dash">
+					<div class="load_card_img big_card load_bg"></div>
+				</div>
+				<div class="div_right_dash">
+					<div class="load_bg calc_33"></div>
+					<div class="load_bg calc_33"></div>
+					<div class="load_bg calc_33"></div>
+					<div class="load_bg calc_100"></div>
+				</div>
+			</div>
+			<div class="hgt_30"></div>
+			<div class="load_card_list_half">
+				<div class="load_card_half_5">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div><div class="load_card_half_5">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div><div class="load_card_half_5">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div><div class="load_card_half_5">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div><div class="load_card_half_5">
+					<div class="load_card_img load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div>
+			</div>
+		</div>
+		<div class="desk_othr_wrap" *ngIf="showFaq">
+			<div class="load_card_normal">
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+			</div>
+			<div class="hgt_16"></div>
+			<div class="load_card_normal">
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="desk_othr_wrap" *ngIf="showFeed">
+			<div class="load_card_normal">
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_btn load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="desk_othr_wrap" *ngIf="showReport">
+			<div class="load_card_normal">
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_input load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_btn load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+		<div class="desk_othr_wrap" *ngIf="showOther">
+			<div class="load_card_normal">
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_top_card load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_card_btn load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+	</ng-template>
+	<div *ngIf="mainPage">
+		<div *ngIf="checkAdmin" class="admin_sidebar">
+			<app-sidebar></app-sidebar>
+		</div>
+		<div class="main_outer">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+	<app-footer></app-footer>
+</div>

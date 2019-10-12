@@ -1,0 +1,16 @@
+<div class="main_dashboard">
+	<h2>Add/Change Owner Image.</h2>
+	<form class="admin_form" [formGroup]="adminform">
+	  	<div class="ibform">
+			<input class="file_hidden" #upfile name="upfile" type="file" id="inputUploader" (change)="fileChangeEvent($event)" accept="image/*" />
+			<button class="browse_btn" (click)="upfile.click()">Choose a image for Venue owner...<span>BROWSE</span></button>
+			<div class="note_quote">Image size should be 40 x 40 in px<br>only jpeg, jpg and png allowed.</div>
+	  	</div>
+	  	<div class="ibform">
+	  		<button id="adminbtn" mat-raised-button color="warn" (click)="advenPhoto()">ADD</button>
+	  	</div>
+	  	<div class="error_img" *ngIf="imgErr">{{imgErr}}</div>
+	  	<div class="error_img" *ngIf="errorMsg">{{errorMsg}}</div>
+	  	<div class="success" *ngIf="successMsg">{{successMsg}}</div>
+	</form>
+</div>

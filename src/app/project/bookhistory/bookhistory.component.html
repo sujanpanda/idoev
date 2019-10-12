@@ -1,0 +1,176 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<div *ngIf="bookingBoolean; else bookLoading">
+		<div *ngIf="bookResult; else noBooking">
+			<mat-card class="booking_list" *ngFor="let bookHis of bookHisDet">
+				<div class="list_header">
+					<span class="list_head_image">
+						<img src="/assets/images/event_list.jpg" alt="event 1">
+					</span><div class="list_head_body">
+						<span class="event_name">{{bookHis.venue}}</span>
+						<span class="event_place">{{bookHis.city}}</span>
+					</div>
+				</div>
+				<div class="list_body " [ngClass]="(bookHis.bookStatus === 'paided')?'approved_bg':'pending_bg'">
+					<p class="list_body_quote">{{bookHis.venuetype | titlecase}}</p>
+					<div class="list_detailed_wrap">
+						<div class="list_booking">
+							Status:- <span class="book_id" *ngIf="bookHis.bookStatus === 'paided'; else paided">Approved</span>
+							<ng-template #paided><span class="book_id">Pending</span></ng-template>
+						</div>
+						<div class="list_booking">
+							Booked for:- {{bookHis.hours}} Hours
+						</div>
+						<div class="date_time_wrap">
+							<img src="/assets/images/calendar_icon.svg" alt="date icon"> {{bookHis.date}}&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/images/time_icon.svg" alt="date icon"> {{bookHis.stime}}
+						</div>
+						<div class="list_booking">
+							Booking ID:- <span class="book_id">{{bookHis.ORDER_ID}}</span>
+						</div>
+						<div class="list_equip">
+							<span *ngIf="bookHis.lighting; else normLight">{{bookHis.lighting | titlecase}} Lighting, </span>
+							<ng-template #normLight>Normal Lighting, </ng-template>
+							<span *ngIf="bookHis.seating; else normSeat">{{bookHis.seating | titlecase}} Chair Seating</span>
+							<ng-template #normSeat>Normal Chair Seating</ng-template>
+							<span *ngFor="let eq of bookHis.equip">, {{eq | titlecase}}</span> &amp; More...
+						</div>
+					</div>
+					<div class="paid_wrap">
+						You Paid <span class="paid_rupee">&#8377;{{bookHis.TXN_AMOUNT}}.00</span>
+					</div>
+				</div>
+			</mat-card>
+		</div>
+		<ng-template #noBooking>
+			<mat-card class="booking_list">
+				<p class="main_head">You Have no bookings</p>
+				<p class="page_head2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<div class="btn_wrap">
+					<a routerLink="/venues" mat-raised-button color="warn">Book an Event</a>
+				</div>
+			</mat-card>
+		</ng-template>
+	</div>
+	<ng-template #bookLoading>
+		<div class="page_load_wrap">
+			<div class="load_card_normal">
+				<div class="load_text_half load_bg"></div>
+				<div class="hgt_30"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_10"></div>
+				<div class="load_text_half load_bg"></div>
+			</div>
+			<div class="hgt_16"></div>
+			<div class="load_card_normal">
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+				<div class="hgt_16"></div>
+				<div class="load_text load_bg"></div>
+			</div>
+			<div class="hgt_30"></div>
+		</div>
+	</ng-template>
+</div>
+<ng-template #desktop>
+	<div class="desk_book_hist">
+		<div *ngIf="bookingBoolean; else bookLoading">
+			<div *ngIf="bookResult; else noBooking">
+				<mat-card class="booking_list" *ngFor="let bookHis of bookHisDet">
+					<div class="list_header">
+						<span class="list_head_image">
+							<img src="/assets/images/event_list.jpg" alt="event 1">
+						</span><div class="list_head_body">
+							<span class="event_name">{{bookHis.venue}}</span>
+							<span class="event_place">{{bookHis.city}}</span>
+						</div>
+					</div>
+					<div class="list_body " [ngClass]="(bookHis.bookStatus === 'paided')?'approved_bg':'pending_bg'">
+						<p class="list_body_quote">{{bookHis.venuetype | titlecase}}</p>
+						<div class="list_detailed_wrap">
+							<div class="list_booking">
+								Status:- <span class="book_id" *ngIf="bookHis.bookStatus === 'paided'; else paided">Approved</span>
+								<ng-template #paided><span class="book_id">Pending</span></ng-template>
+							</div>
+							<div class="list_booking">
+								Booked for:- {{bookHis.hours}} Hours
+							</div>
+							<div class="date_time_wrap">
+								<img src="/assets/images/calendar_icon.svg" alt="date icon"> {{bookHis.date}}&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/images/time_icon.svg" alt="date icon"> {{bookHis.stime}}
+							</div>
+							<div class="list_booking">
+								Booking ID:- <span class="book_id">{{bookHis.ORDER_ID}}</span>
+							</div>
+							<div class="list_equip">
+								<span *ngIf="bookHis.lighting; else normLight">{{bookHis.lighting | titlecase}} Lighting, </span>
+								<ng-template #normLight>Normal Lighting, </ng-template>
+								<span *ngIf="bookHis.seating; else normSeat">{{bookHis.seating | titlecase}} Chair Seating</span>
+								<ng-template #normSeat>Normal Chair Seating</ng-template>
+								<span *ngFor="let eq of bookHis.equip">, {{eq | titlecase}}</span> &amp; More...
+							</div>
+						</div>
+						<div class="paid_wrap">
+							You Paid <span class="paid_rupee">&#8377;{{bookHis.TXN_AMOUNT}}.00</span>
+						</div>
+					</div>
+				</mat-card>
+			</div>
+			<ng-template #noBooking>
+				<mat-card class="booking_list">
+					<p class="main_head">You Have no bookings</p>
+					<p class="page_head2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<div class="btn_wrap">
+						<a routerLink="/venues" mat-raised-button color="warn">Book an Event</a>
+					</div>
+				</mat-card>
+			</ng-template>
+		</div>
+		<ng-template #bookLoading>
+			<div class="page_load_wrap">
+				<div class="load_card_normal">
+					<div class="load_text_half load_bg"></div>
+					<div class="hgt_30"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_10"></div>
+					<div class="load_text_half load_bg"></div>
+				</div>
+				<div class="hgt_16"></div>
+				<div class="load_card_normal">
+					<div class="load_text load_bg"></div>
+					<div class="hgt_16"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_16"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_16"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_16"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_16"></div>
+					<div class="load_text load_bg"></div>
+					<div class="hgt_16"></div>
+					<div class="load_text load_bg"></div>
+				</div>
+				<div class="hgt_30"></div>
+			</div>
+		</ng-template>
+	</div>
+</ng-template>

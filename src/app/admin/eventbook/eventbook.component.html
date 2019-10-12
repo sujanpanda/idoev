@@ -1,0 +1,27 @@
+<div class="main_dashboard">
+	<h2>Eevent Booking.</h2>
+	<div class="cont_list" *ngFor="let gtfrm of getFormDet">
+		<span class="cont_name">{{gtfrm.EMAIL}}</span>
+		<span class="cont_email">{{gtfrm.ORDER_ID}}</span>
+		<span class="cont_email"><span class="fade_color">Price:-</span> {{gtfrm.TXN_AMOUNT}}/-</span>
+		<span class="cont_email"><span class="fade_color">City:-</span> {{gtfrm.city}}</span>
+		<span class="cont_email"><span class="fade_color">For</span> {{gtfrm.venuetype}}</span>
+		<div class="cont_descr">
+			<span class="cont_item"><span class="fade_color">Date:-</span> {{gtfrm.date}}</span>
+			<span class="cont_email"><span class="fade_color">Status:-</span> {{gtfrm.bookStatus}}</span>
+			<span class="cont_email"><span class="fade_color">Booking Items:-</span> flowers({{gtfrm.flowers}}), Food({{gtfrm.foodgan}}, Lighting({{gtfrm.lighting}}), Seating({{gtfrm.seating}}), {{gtfrm.equip}}</span>
+		</div>
+		<div class="cont_descr">
+			<span class="cont_item"><span class="fade_color">Start Time:-</span> {{gtfrm.stime}}</span>
+			<span class="cont_email"><span class="fade_color">Time to spend:-</span> {{gtfrm.hours}} hrs</span>
+			<span class="cont_email"><span class="fade_color">Venue:-</span> {{gtfrm.venue}}</span>
+			<span class="cont_email"><span class="fade_color">Number of guest:-</span> {{gtfrm.guest}}</span>
+			<span class="cont_email" *ngIf="gtfrm.bookStatus === 'request'">
+				<button (click)="approvePayment($event)" id="{{gtfrm.ORDER_ID}}">Approve</button>
+			</span>
+			<span class="cont_email" *ngIf="gtfrm.bookStatus === 'paid'">
+				<button (click)="approvePayment($event)" id="{{gtfrm.ORDER_ID}}">Approve</button>
+			</span>
+		</div>
+	</div>
+</div>

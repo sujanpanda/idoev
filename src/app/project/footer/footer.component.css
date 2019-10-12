@@ -1,0 +1,64 @@
+.footer_icon {
+	border: solid 1px #ddd;
+	border-radius: 50%;
+	display: inline-block;
+	margin: 0 10px;
+	padding: 20px;
+	vertical-align: middle;
+}
+.icon_fb {
+	border-color: #3b5998;
+}
+.icon_tt {
+	border-color: #1da1f2;
+}
+.icon_gp {
+	border-color: #db4a39;
+}
+.footer_icon img {
+	display: block;
+}
+.footer_wrap {
+	margin-bottom: 30px;
+	text-align: center;
+}
+.desktop_footer, .mobile_footer {
+	background-color: #eee;
+	padding: 34px 16px;
+}
+.mobile_footer .footer_list li {
+	display: block;
+	margin: 8px 0 0;
+}
+.mobile_footer .footer_list li: first-child {
+	margin: 0;
+}
+.desk_foot {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+.footer_list {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.footer_list li {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0 16px;
+}
+.footer_list li a {
+	color: #333;
+	text-decoration: none;
+}
+.footer_para {
+	color: #999;
+	font-size: 14px;
+	margin: 0;
+	padding: 12px 0 0;
+	text-align: center;
+}
+.footer_para a {
+    color: #2699FB;
+    text-decoration: none;
+}

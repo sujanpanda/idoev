@@ -1,0 +1,115 @@
+<div *ngIf="mobView; else desktop">
+	<form class="register_page" [formGroup]="registerForm">
+		<mat-form-field>
+	    	<input type="text" autocomplete="off" matInput placeholder="Name" name="name" formControlName="name">
+	    	<mat-error *ngIf="rform.name.errors?.required && rform.name.touched">
+				Please write your name.
+			</mat-error>
+			<mat-error *ngIf="rform.name.errors?.minlength && rform.name.touched; else notValid">
+				Name should be minimum 3 letters.
+			</mat-error>
+			<ng-template #notValid>
+				<mat-error *ngIf="rform.name.errors?.pattern && rform.name.touched">
+					Remove space before and after your name.
+				</mat-error>
+			</ng-template>
+	  	</mat-form-field>
+		<mat-form-field>
+	    	<input type="email" autocomplete="off" (keydown.space)="$event.preventDefault();" matInput placeholder="Email" name="email" formControlName="email">
+	    	<mat-error *ngIf="rform.email.errors?.required && rform.email.touched">
+				Email ID is Required.
+			</mat-error>
+			<mat-error *ngIf="rform.email.errors?.email && rform.email.touched">
+				Please type a valid email ID.
+			</mat-error>
+	  	</mat-form-field>
+	  	<div class="pass_wrap">
+			<mat-form-field>
+		    	<input [type]="hide ? 'text' : 'password'" matInput placeholder="Password" (keydown.space)="$event.preventDefault();" name="password" formControlName="password">
+		    	<mat-error *ngIf="rform.password.errors?.required && rform.password.touched">
+					Password is Required.
+				</mat-error>
+				<mat-error *ngIf="rform.password.errors?.minlength && rform.password.touched; else noSpace">
+					Password should be minimum 6 letters.
+				</mat-error>
+				<ng-template #noSpace>
+					<mat-error *ngIf="rform.password.errors?.pattern && rform.password.touched">
+						Password shouldn't have any spaces.
+					</mat-error>
+				</ng-template>
+		  	</mat-form-field>
+		  	<span class="pass_icon">
+		  		<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+		  	</span>
+	  	</div>
+	  	<div class="server_valid_box" *ngIf="errorMsg">
+	        <mat-error class="server_valid" *ngFor="let errMsg of errorMsg">{{ errMsg.msg }}</mat-error>
+	    </div>
+	  	<div class="btn_wrap">
+			<button id="registerbtn" mat-raised-button color="warn" (click)="registerUser()">Register</button>
+		</div>
+		<p class="terms_quote">By continuing you are accepting our <a routerLink="/termscond">terms &amp; Conditions</a>.</p>
+		<div class="dont_acc_wrap">
+			Already have an account? <a routerLink="/login">Login</a>
+		</div>
+	</form>
+</div>
+<ng-template #desktop>
+	<mat-card class="desk_reg_card">
+		<form class="register_page" [formGroup]="registerForm">
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="Name" name="name" formControlName="name">
+		    	<mat-error *ngIf="rform.name.errors?.required && rform.name.touched">
+					Please write your name.
+				</mat-error>
+				<mat-error *ngIf="rform.name.errors?.minlength && rform.name.touched; else notValid">
+					Name should be minimum 3 letters.
+				</mat-error>
+				<ng-template #notValid>
+					<mat-error *ngIf="rform.name.errors?.pattern && rform.name.touched">
+						Remove space before and after your name.
+					</mat-error>
+				</ng-template>
+		  	</mat-form-field>
+			<mat-form-field>
+		    	<input type="email" autocomplete="off" (keydown.space)="$event.preventDefault();" matInput placeholder="Email" name="email" formControlName="email">
+		    	<mat-error *ngIf="rform.email.errors?.required && rform.email.touched">
+					Email ID is Required.
+				</mat-error>
+				<mat-error *ngIf="rform.email.errors?.email && rform.email.touched">
+					Please type a valid email ID.
+				</mat-error>
+		  	</mat-form-field>
+		  	<div class="pass_wrap">
+				<mat-form-field>
+			    	<input [type]="hide ? 'text' : 'password'" matInput placeholder="Password" (keydown.space)="$event.preventDefault();" name="password" formControlName="password">
+			    	<mat-error *ngIf="rform.password.errors?.required && rform.password.touched">
+						Password is Required.
+					</mat-error>
+					<mat-error *ngIf="rform.password.errors?.minlength && rform.password.touched; else noSpace">
+						Password should be minimum 6 letters.
+					</mat-error>
+					<ng-template #noSpace>
+						<mat-error *ngIf="rform.password.errors?.pattern && rform.password.touched">
+							Password shouldn't have any spaces.
+						</mat-error>
+					</ng-template>
+			  	</mat-form-field>
+			  	<span class="pass_icon">
+			  		<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+			  	</span>
+		  	</div>
+		  	<div class="server_valid_box" *ngIf="errorMsg">
+		        <mat-error class="server_valid" *ngFor="let errMsg of errorMsg">{{ errMsg.msg }}</mat-error>
+		    </div>
+		  	<div class="btn_wrap">
+				<button id="registerbtn" mat-raised-button color="warn" (click)="registerUser()">Register</button>
+			</div>
+			<p class="terms_quote">By continuing you are accepting our <a routerLink="/termscond">terms &amp; Conditions</a>.</p>
+		</form>
+		
+	</mat-card>
+	<div class="dont_acc_wrap">
+		Already have an account? <a routerLink="/login">Login</a>
+	</div>
+</ng-template>

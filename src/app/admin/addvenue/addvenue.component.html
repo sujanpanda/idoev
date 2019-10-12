@@ -1,0 +1,68 @@
+<div class="main_dashboard">
+	<h2>Add Venue.</h2>
+	<form class="admin_form" [formGroup]="adminform">
+		<div class="ibform">
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="Venue Name" #name name="name" formControlName="name">
+		    	<mat-error *ngIf="aform.name.errors?.required && aform.name.touched">
+					Please write Venue name.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+		<div class="ibform">
+		  	<mat-form-field>
+		  		<mat-label>City</mat-label>
+			  	<mat-select placeholder="City" name="city" #city formControlName="city">
+				    <mat-option *ngFor="let ct of ctDetail" value="{{ct[1]}}">{{ct[1]}}</mat-option>
+			  	</mat-select>
+			  	<mat-error *ngIf="aform.city.errors?.required && aform.city.touched">
+					Please enter your city.
+				</mat-error>
+			</mat-form-field>
+	  	</div>
+	  	<div class="ibform">
+			<mat-form-field>
+		    	<input type="text" autocomplete="off" matInput placeholder="Owner Name" #owner name="owner" formControlName="owner">
+		    	<mat-error *ngIf="aform.owner.errors?.required && aform.owner.touched">
+					Please write Owner name.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+	  	<div class="ibform_big">
+			<mat-form-field>
+				<textarea matInput placeholder="Write details of this venue" autocomplete="off"  #detail name="detail" formControlName="detail"></textarea>
+		    	<mat-error *ngIf="aform.detail.errors?.required && aform.detail.touched">
+					Please write Details of this venue.
+				</mat-error>
+		    	<mat-error *ngIf="aform.detail.errors?.pattern && aform.detail.touched">
+					Remove space before and after your detail.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+	  	<div class="ibform">
+			<mat-form-field>
+		    	<input type="number" autocomplete="off" matInput placeholder="Base price of this venue" #baseprice name="baseprice" formControlName="baseprice">
+				<mat-error *ngIf="aform.baseprice.errors?.pattern && aform.baseprice.touched">
+					Please enter a valid Base price.
+				</mat-error>
+		  	</mat-form-field>
+	  	</div>
+	  	<div class="ibform">
+			<mat-form-field>
+			  	<mat-label>Choose Event types</mat-label>
+			  	<mat-select multiple #type name="type" formControlName="type" (selectionChange)="eventChange($event)">
+				    <mat-option value="all">all</mat-option>
+				    <mat-option [disabled]="disableSelect" *ngFor="let ce of chEvent" value="{{ce.type}}">{{ce.type}}</mat-option>
+			  	</mat-select>
+			  	<mat-error *ngIf="aform.type.errors?.required && aform.type.touched">
+					Please select a Event type.
+				</mat-error>
+			</mat-form-field>
+	  	</div>
+	  	<div class="ibform">
+	  		<button id="adminbtn" mat-raised-button color="warn" (click)="adVenue()">ADD</button>
+	  	</div>
+	  	<div class="error" *ngIf="errorMsg">{{errorMsg}}</div>
+	  	<div class="success" *ngIf="successMsg">{{successMsg}}</div>
+	</form>
+</div>

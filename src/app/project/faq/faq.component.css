@@ -1,0 +1,20 @@
+.page_wrap {
+    padding: 0 16px;
+    margin: -16px 0 30px;
+    position: relative;
+    z-index: 2;
+}
+.faq_detail {
+	border-top: 1px solid #ccc;
+	font-size: 14px;
+	font-weight: 400;
+	padding-top: 20px;
+}
+.mat-expansion-panel-header-title {
+	font-size: 16px;
+	font-weight: 600;
+}
+.desktop_wrap {
+	margin: 30px auto;
+	max-width: 1000px;
+}

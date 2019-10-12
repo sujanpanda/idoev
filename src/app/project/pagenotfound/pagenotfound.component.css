@@ -1,0 +1,50 @@
+.page_wrap {
+    padding: 0 16px;
+    margin: -16px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.no_page_card {
+	margin-bottom: 30px;
+}
+.main_head {
+	color: #212121;
+	font-size: 50px;
+	font-weight: 400;
+	line-height: 75px;
+	margin-bottom: 16px;
+	text-align: center;
+}
+.page_head {
+	color: #666;
+	font-size: 22px;
+	line-height: 28px;
+	text-align: center;
+}
+.page_head2 {
+	color: #666;
+	font-size: 14px;
+	line-height: 22px;
+	margin-bottom: 34px;
+	text-align: center;
+}
+.link_anc {
+    color: #2699FB;
+    text-decoration: none;
+}
+.creative_404 {
+	display: block;
+	margin: 0 auto 34px;
+	max-width: 100%;
+}
+.reset_tabs {
+	text-align: center;
+}
+.reset_tabs .link_anc {
+	font-size: 18px;
+	margin: 0 10px;
+}
+.desk_page_wrap {
+	margin: 30px auto;
+	max-width: 1000px;
+}

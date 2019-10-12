@@ -1,0 +1,28 @@
+<div class="page_wrap" *ngIf="mobView; else dektop">
+	<mat-card class="no_page_card">
+		<p class="main_head">Uh Oh!</p>
+		<p class="page_head">The page you were looking for doesn't exist.</p>
+		<p class="page_head2">You might have typed in wrong address or the page has moved. In the meantime, try again or<br><a routerLink="/" class="link_anc">return to the home page.</a></p>
+		<img class="creative_404" src="/assets/images/creative_404.png">
+		<div class="reset_tabs">
+			<a routerLink="/" class="link_anc">Home</a>
+			<a routerLink="/faq" class="link_anc">FAQ</a>
+			<a routerLink="/venues" class="link_anc">View Venues</a>
+		</div>
+	</mat-card>
+</div>
+<ng-template #dektop>
+	<div class="desk_page_wrap">
+		<mat-card class="no_page_card">
+			<p class="main_head">Uh Oh!</p>
+			<p class="page_head">The page you were looking for doesn't exist.</p>
+			<p class="page_head2">You might have typed in wrong address or the page has moved. In the meantime, try again or<br><a routerLink="/" class="link_anc">return to the home page.</a></p>
+			<img class="creative_404" src="/assets/images/creative_404.png">
+			<div class="reset_tabs">
+				<a routerLink="/" class="link_anc">Home</a>
+				<a routerLink="/faq" class="link_anc">FAQ</a>
+				<a routerLink="/venues" class="link_anc">View Venues</a>
+			</div>
+		</mat-card>
+	</div>
+</ng-template>

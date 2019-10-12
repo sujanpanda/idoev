@@ -1,0 +1,66 @@
+<div class="page_wrap" *ngIf="mobView; else desktop">
+	<mat-card class="about_card">
+		<div class="about_iframe_wrap">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/VAkio68d51A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	</mat-card>
+	<h1 class="main_heading">About big title</h1>
+	<p class="main_quote">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+	<p class="second_quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+	<img class="about_image" src="/assets/images/about_img1.png" alt="about image">
+	<p class="main_quote">There are many variations of passages of Lorem Ipsum available.</p>
+	<p class="second_quote">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+	<p class="second_quote">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+	<img class="about_image" src="/assets/images/about_image2.png" alt="about image2">
+	<p class="second_quote">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+</div>
+<ng-template #desktop>
+	<div class="desk_about custom_clearfix">
+		<mat-card class="desk_about_card">
+			<div class="desk_iframe_wrap">
+				<iframe width="450" height="315" src="https://www.youtube.com/embed/VAkio68d51A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</mat-card>
+		<div class="desk_box_l">
+			<div class="desk_tb">
+				<div class="desk_tc">
+					<h1 class="main_heading">About big title</h1>
+					<p class="main_quote">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+				</div>
+			</div>
+		</div>
+		<div class="desk_seperator">&nbsp;</div>
+		<p class="second_quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+		<mat-card class="desk_about_card2">
+			<div class="desk_tb marg_auto">
+				<div class="desk_tc">
+					<img class="about_image" src="/assets/images/about_img1.png" alt="about image">
+				</div>
+			</div>
+		</mat-card>
+		<div class="desk_box_2">
+			<div class="desk_tb">
+				<div class="desk_tc">
+					<p class="main_quote">There are many variations of passages of Lorem Ipsum available.</p>
+					<p class="second_quote">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+				</div>
+			</div>
+		</div>
+		<div class="desk_seperator">&nbsp;</div>
+		<p class="second_quote">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+		<mat-card class="desk_about_card">
+			<div class="desk_tb marg_auto">
+				<div class="desk_tc">
+					<img class="about_image" src="/assets/images/about_image2.png" alt="about image2">
+				</div>
+			</div>
+		</mat-card>
+		<div class="desk_box_l mb_0">
+			<div class="desk_tb">
+				<div class="desk_tc">
+					<p class="second_quote">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>
