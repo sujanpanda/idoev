@@ -34,7 +34,7 @@
     "ngx-image-cropper": "^1.4.1",
     "ngx-material-time-select": "^0.2.1",
     "rxjs": "~6.3.3",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26",
     "typescript": "~3.2.2",
